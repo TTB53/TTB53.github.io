@@ -22,7 +22,7 @@ var main = function() {
 				 * Callback function or basically the code that needs to be executed after the animation has finished.
 				 * this puts the non animated code on a delay to until the animation is finished. 
 				 */
-				
+				navMenu.animate({"padding-top":"40px"},500);
 				// turning the menu open icon off
 				openMenuIcon.toggle();
 
@@ -37,7 +37,7 @@ var main = function() {
 			// Closing the menu
 			navMenu.toggle(500,function(){
 				//Callback Function: what's to execute after animation completes.
-				
+				navMenu.animate({"padding-top":"0px"},500);
 				// turning the menu close icon off.
 				closeMenuIcon.toggle();
 
