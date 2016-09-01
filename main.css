@@ -1,0 +1,255 @@
+html , body ,.experiance-row {
+	 height: 100 vh;
+}
+
+
+
+body {
+	 background:#c4c4c4;
+	 color:white;
+	 margin:0;
+	 padding:0;
+}
+
+.container-fluid{
+	padding:0;
+}
+
+
+
+p , body , div , span , ul , li , a {
+	 font-family: coda,helvetica,sans-serif;
+}
+
+
+
+a {
+	 color:white;
+}
+
+
+
+p {
+	 text-shadow: 1px   1px   #000000;
+}
+
+
+
+.divider {
+	 height:1px;
+	 width: 100%;
+	 display: block;
+	 margin: 9px  0;
+	 overflow: hidden;
+	 background-color: gold;
+}
+
+
+
+.card-divider {
+	 width:50%;
+	 margin:0 auto;
+	 background-color:#c4c4c4;
+}
+
+.section-h1 {
+	 margin-bottom: 50px;
+	 font-family: raleway,helvetica,sans-serif;
+	 font-weight: 100;
+	 font-size: -webkit-xxx-large;
+	 color: palegreen;
+	 -webkit-text-shadow:   0px   6px   7px    rgba(0 ,0 ,0 ,0.23 );
+	 -moz-text-shadow:0px 6px 7px rgba(0 ,0 ,0 ,0.23 );
+	 text-shadow:   0px   6px   7px   rgba(0 ,0 ,0 ,0.23 );
+}
+
+
+.navbar-header ,.landing-row ,  .about-me ,.experiance-row ,.pro-skills-row
+,.contact-row , .video-container ,row , footer {
+	 width: 100%;
+	 height: auto;
+}
+
+#navigation{
+	background-color:rgba(105,105,105,.6);
+	-webkit-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+	box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+}
+
+#nextPageIcon{
+	position: fixed;
+    background-color: rgba(218,165,32,.6);
+    opacity:.7;
+    top: 85%;
+    padding: 15px;
+    right: 1.5%;
+    z-index:1000;
+}
+
+#menuIcon{
+	padding:15px;
+}
+
+#menu,#menuClose,.role-desc{
+	display:none;
+}
+
+
+.main-menu-anchor{
+	margin-top:10px;
+}
+
+
+
+.landing-row {
+	 height:100vh;
+}
+
+.landing-pg-wrapper{
+	background-image: url("Images/IMG_0510.jpg");
+	background-blend-mode: multiply;
+	background-color: dodgerblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+}
+
+
+.video-container{
+	position:absolute;
+	top:0%;
+	left:0%;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+}
+video {
+	 position: absolute;
+	 z-index: -100;
+	 opacity:.75;
+	 width:100%;
+}
+
+
+
+.landing-info {
+	 position:absolute;
+	 top:30%;
+	 left:0%;
+}
+
+h3 .lead{
+	animation-duration:3s;
+	animation-delay:2s;
+	animation-iteration-count:1;
+}
+
+
+.about-me, .pro-skills-row {
+	 background-color: dimgrey;
+}
+
+
+
+.about-me-info   b {
+	 font-family: raleway,helvetica,sans-serif;
+}
+
+
+
+#proPicture {
+	 background-image: url("https://media.licdn.com/media/AAEAAQAAAAAAAAKHAAAAJDNkNDVlZjA0LWE2NmYtNDBmMS1hYzljLWY1ZjBjYWJmZDUzNg.jpg");
+	 background-size: cover;
+	 width: 100%;
+	 height: 100%;
+	 display: inline-box;
+}
+
+
+
+.experiance-row {
+	 background-color: #c4c4c4;
+	 margin-bottom: 5 vh;
+}
+
+
+
+.experiance   *{
+	 font-family: Raleway,Helvetica,sans-serif;
+}
+
+.job-responsibilites li{
+	padding-bottom:10px;
+}
+
+.current-role,.prev-role-1,.prev-role-2,.education{
+	background-blend-mode: multiply;
+	 background-size: cover;
+	 height: 100vh;
+}
+
+.current-role {
+	 background-color:dodgerblue ;
+	 /*background-image: url( "Images/IMG_1066.jpg" );*/
+}
+
+
+
+.prev-role-1 {
+	 background-color: palegreen;
+	/* background-image: url( "Images/IMG_0699.jpg" );*/
+}
+
+
+
+.prev-role-2 {
+	 background-color: goldenrod;
+	/* background-image: url( "Images/IMG_1107.jpg" ); */
+}
+
+
+
+.education {
+	 background-color: dodgerblue;
+	 background-image: url( "Images/EUP-Sign-Spring.jpg" );
+	 margin-bottom:7.5%;
+	 height:100vh;
+}
+
+.icon-helper{
+	padding-right:15px;
+	padding-left:15px;
+}
+
+
+.card-info, .role-info {
+	 position: relative;
+	 top: 25%;
+	 margin: 0   auto;
+}
+
+
+.contact-footer-wrapper {
+	 background-color: dodgerblue;
+}
+
+
+.contact-info   img {
+	 display: inline;
+	 width: 75px;
+	 height: 75px 
+}
+
+.soc-media{
+	margin-top:20px;
+}
+
+.soc-media-icons{
+	margin:auto 10px;
+	color:palegreen;
+}
+
+footer {
+	 margin-top:15px;
+}
