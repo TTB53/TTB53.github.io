@@ -40,6 +40,7 @@ a{
 p {
 	padding-top:5px;
 	 text-shadow: 1px   1px   #000000;
+	 line-height:1.2em;
 }
 
 
@@ -73,12 +74,38 @@ paragraph-link{
 }
 
 
+.pg-wrapper{
+background: rgba(33,33,33,1);
+background: -moz-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(33,33,33,1)), color-stop(100%, rgba(102,100,102,1)));
+background: -webkit-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: -o-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: -ms-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#757575', endColorstr='#212121', GradientType=0 );*/
+}
+
+
 .btn{
 	border: 3px solid rgba(255,193,7,1);
 	color:rgba(255,255,255,1);
 	border-radius:5px;	
 	padding:15px;
 }
+
+#topReturn{
+	position: fixed;
+    background-color: rgba(255,193,7,.6);
+    opacity:.7;
+    top: 85%;
+    padding: 15px;
+    right: 1.5%;
+    z-index:1000;
+    display:none;
+    border-radius:5px;
+}
+
+
 
 /*
  * -------------------------------------------------------------------------------------------
@@ -94,17 +121,11 @@ paragraph-link{
 	box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
 }
 
-#topReturn{
-	position: fixed;
-    background-color: rgba(255,193,7,.6);
-    opacity:.7;
-    top: 85%;
-    padding: 15px;
-    right: 1.5%;
-    z-index:1000;
-    display:none;
-    border-radius:5px;
+#navCTA:hover{
+	background-color:rgb(255,193,7);
+	color:rgb(33,33,33);
 }
+
 
 #menuIcon{
 	padding:15px;
@@ -119,6 +140,11 @@ paragraph-link{
 	margin-top:10px;
 }
 
+#menu li a{
+	border-radius:3px;
+	margin:5px auto;
+}
+
 /*
  * -------------------------------------------------------------------------------------------
  * 
@@ -129,7 +155,7 @@ paragraph-link{
 
 .landing-row {
 	 height:960px;
-	 background-color:rgba(187,222,251,.55);
+	 background-color:rgba(189,189,189,.55);
 }
 
 .landing-pg-wrapper{
@@ -165,7 +191,7 @@ paragraph-link{
 
 .landing-info {
 	 position:absolute;
-	 background-color:rgba(33,150,243,.75);;
+	 background-color:rgba(33,150,243,.35);;
 	 top:25%;
 	 left:10%;
 	 right:10%;
@@ -178,6 +204,7 @@ paragraph-link{
       */
     
 }
+
 
 .landing-info .text-separator{
 	margin:auto 10px;
@@ -195,7 +222,7 @@ paragraph-link{
 }
 
 .landing-info .btn:hover{
-	opacity:.55;
+	opacity:1;
 }
 
 
@@ -212,6 +239,11 @@ h3 .lead{
 	animation-iteration-count:1;
 }
 
+.landing-cta a{
+	margin:auto 10px;
+}
+
+
 /*
  * -------------------------------------------------------------------------------------------
  * 
@@ -220,8 +252,8 @@ h3 .lead{
  * -------------------------------------------------------------------------------------------
  */
 
-.about-me, .pro-skills-row {
-	 background-color: rgba(33,33,33,1);
+.about-me, .pro-skills-row,.experiance-row,.contact-footer-wrapper {
+	 /*background-color: rgba(33,33,33,1);*/
 }
 
 
@@ -264,12 +296,6 @@ h3 .lead{
  */
 
 
-.experiance-row {
-	 background-color: rgba(33,33,33,1);
-}
-
-
-
 .experiance   *{
 	 font-family: Raleway,Helvetica,sans-serif;
 }
@@ -290,7 +316,10 @@ h3 .lead{
 
 .current-role {
 	 background-color:rgba(33,150,243,1);
-	 /*background-image: url( "Images/IMG_1066.jpg" );*/
+	 background-image: url( 'Images/IMG_0510.jpg');
+	 background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
 	 height:75vh;
 }
 
@@ -298,6 +327,10 @@ h3 .lead{
 
 .prev-role-1 {
 	background-color: rgba(255,193,7,1);
+	 	 background-image: url( 'Images/IMG_0510.jpg');
+	 background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
 	height:65vh;
 }
 
@@ -305,15 +338,19 @@ h3 .lead{
 
 .prev-role-2 {
 	 background-color: rgba(189,189,189,1);
-	/* background-image: url( "Images/IMG_1107.jpg" ); */
+	 background-image: url( 'Images/IMG_0510.jpg');
+	 background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
 	height:60vh;
 }
-
-
 
 .education {
 	background-color: rgba(189,189,189,1);
 	 background-image: url( "Images/EUP-Sign-Spring.jpg" );
+	background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
 	 margin-bottom:7.5%;
 	 height:50vh;
 }
@@ -338,9 +375,7 @@ h3 .lead{
  * 
  * -------------------------------------------------------------------------------------------
  */
-.contact-footer-wrapper {
-	 background-color: rgba(33,33,33,1);
-}
+
 
 
 .contact-info{
@@ -350,6 +385,15 @@ h3 .lead{
 
 .contact-info h1 a:hover{
 	color:rgba(255,193,7,.7);
+}
+
+.contact-info:hover{
+	opacity:.65;
+}
+
+.contact-info a:hover{
+	opacity:1;
+	color:#FFC107;
 }
 
 

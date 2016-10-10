@@ -14,6 +14,10 @@ var main = function() {
 	var screen_Height = screen.height;
 	var window_Height = $(window).height();
 	var window_Width = $(window).width();
+	
+	
+	
+
 
 	
 /**********************************************************************************
@@ -35,7 +39,14 @@ var main = function() {
 				 * this puts the non animated code on a delay to until the animation is finished. 
 				 */
 				if(screen_Width<=425){
-					navMenu.animate({"margin-top":"40px"},500);
+					$('.navbar-brand').css({"width":"100%"})
+					$('#menuClose').css({
+						"margin-botton":"10%"
+					});
+
+					
+				}else if(screen_Width<=768 && screen_Width>425){
+					navMenu.animate({"padding-top":"0px"},500);
 				}else{
 					navMenu.animate({"padding-top":"40px"},500);
 				}
@@ -53,7 +64,10 @@ var main = function() {
 		closeMenuIcon.click(function() {
 			// Closing the menu
 			if(screen_Width<=425){
-				navMenu.animate({"margin-top":"0px"},500);
+				$('.navbar-brand').toggle();
+				$('navMenu li a:first').css({
+					"margin-top":"0%"
+				});
 			}else{
 				navMenu.animate({"padding-top":"0px"},500);
 			}
@@ -73,7 +87,7 @@ var main = function() {
 		});
 	};
 	
-	//NEXT PAGE ICON HOVER EFFECT. 
+	//TOP RETURN ICON HOVER EFFECT. 
 	$('#topReturn').hover(function() {
 		// Mouse Enter
 		$(this).animate({
@@ -97,11 +111,23 @@ var main = function() {
 		});
 	};
 	
+	/**********************************************************************************
+	 *                    LANDING PAGE FUNCTIONS
+	 **********************************************************************************
+	 */
+	
+
+	
 
 	/**********************************************************************************
 	 *                    ABOUT-ME FUNCTIONS
 	 **********************************************************************************
 	 */
+	
+	//Toggling the advance to next section button on screens smaller then 768px
+	if(screen_Width<768){
+		$('.section-advance').toggle();
+	}
 	
 	/**********************************************************************************
 	 *                   EXPERIENCE FUNCTIONS
@@ -134,16 +160,15 @@ var main = function() {
 			$(this).css({
 				"opacity" : "1",
 				"background-image" : "none"
-			});
-			
-			if($("#"+cardId).css("background-color")===origBGColor){
-				$("#"+cardId).css({"background-color":"pink"});
-			}else{
-				$("#"+cardId).css({"background-color":origBGColor});
-			}
+			},"slow");
+
 			//Toggling off the Job Title 
+			if(screen_Width<768){
+				$("#" + cardId + " .role-desc").animate({
+					"top":"15%"
+				},500);
+			}
 			
-			//$("#" + cardId + " .card-info").slideToggle(500);	
 			
 			//Toggling off the Job Description and changing the background color. 
 			
@@ -159,28 +184,30 @@ var main = function() {
 	var toggleCardHover = function(){
 		
 		$('.job-position').hover(function() {
+			
+			var $this = $(this);
+			var startingBG = $this.attr('background-imgae');
+			$this;
 
 			// Mouse Enter function
-			if((this) !== 'Education'){
-				$(this).css({
-					"background-image" : "url('Images/IMG_0510.jpg')",
-					"opacity" : ".65",
-					"animation-duration":"2s",
-					"animation-delay":"0s",
-					"animation-iteration-count":"1"
+			if($this.attr('id') !=='education-card'){
+				$this.css({
+					"background-size -":"100%",
+					"opacity" : ".40",
 				}, 1000);
-				$(this);
+				$this;
 			}else{
-				$(this).css({
-					"background-image":"url('Images/IMG_EUP Sign-Alt.jpg"
+				$this.css({
+					"background-image":"url('Images/IMG_EUP Sign-Alt.jpg')"
 				},1000);
+				$this;
 			}
 
 		}, function() {
 
 			// Mouse Leave function
 			$(this).css({
-				"background-image" : "none",
+				"background-image" : "startingBG",
 				"opacity" : "1",
 				"animation-duration":"0s",
 				"animation-delay":"0s",
@@ -202,10 +229,31 @@ var main = function() {
 		// Mouse Enter
 		$(this).css("color", "rgba(218,165,32,.6");
 	}, function() {
-		$(this).css("color", "rgba(105,105,105,1);");
+		//Mouse Leave
+		$(this).css("color", "rgba(218,165,32,1)");
 	});
 	
 	
+	
+	
+	/**********************************************************************************
+	 *                  GENERAL HOVER FUNCTIONS
+	 **********************************************************************************
+	 */
+	
+	$('.btn').hover(function(){
+		//Mouse Enter 
+		$(this).css({
+			"color":"rgb(33,33,33)",
+			"background-color":"rgb(255,193,7)"
+		});
+	},function(){
+		//Mouse Leave
+		$(this).css({
+			"color":"rgba(255,255,255,1)",
+			"background-color":"transparent"
+		});
+	});
 
 
 	/**********************************************************************************
@@ -238,22 +286,24 @@ var main = function() {
 	}; 
 	
 	
+	
+	//Return to top scroll animation
 	$(window).scroll(function(){
 		
 		
 		var positionFromTop = $(window).scrollTop();
 		console.log("Current positon from the top of the Window - Scroll Function (positionFromTop)" + positionFromTop);
 		
-		var contactMeTop = 0;
-		var contactMeTop = $('.contact-footer-wrapper').position().top;
-		console.log("Contact-Footer-Wrapper Element Top (contactMeTop)" + contactMeTop);
-		console.log(contactMeTop < positionFromTop);
+		var educationCard = 0;
+		var educationTop = $('#education-card').position().top;
+		console.log("Education Element Top (contactMeTop)" + educationTop);
+		console.log(educationTop < positionFromTop);
 		
 		var topReturn = $('#topReturn');
 		
 		
 		
-		if(contactMeTop < positionFromTop){
+		if(educationTop < positionFromTop){
 			topReturn.show();
 		}else{
 			topReturn.hide();
@@ -405,6 +455,7 @@ var main = function() {
 	//Loading that is going to take care of CSS positioning for certain screen sizes. 
 	
 	$(this).load(screenSize_CSS_loader()).load(startingInformation());
+
 	$('body').on("resize",screenSize_CSS_loader());
 	
 	//Menu animations. 
