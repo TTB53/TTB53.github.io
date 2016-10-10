@@ -1,14 +1,23 @@
+/*
+ * -------------------------------------------------------------------------------------------
+ * 
+ * GENERAL STYLING 
+ * 
+ * -------------------------------------------------------------------------------------------
+ */
+
 html , body ,.experiance-row {
-	 height: 100 vh;
+	 height: 100%;
+	 margin:0;
+	 padding:0;
 }
 
 
 
 body {
-	 background:#c4c4c4;
+	 background:rgba(117,117,117,1);
 	 color:white;
-	 margin:0;
-	 padding:0;
+
 }
 
 .container-fluid{
@@ -19,29 +28,19 @@ body {
 
 p , body , div , span , ul , li , a {
 	 font-family: coda,helvetica,sans-serif;
+	 line-height:24px;
 }
 
 
-
-a {
-	 color:white;
+a{
+	color:white;
 }
-
 
 
 p {
+	padding-top:5px;
 	 text-shadow: 1px   1px   #000000;
-}
-
-
-
-.divider {
-	 height:1px;
-	 width: 100%;
-	 display: block;
-	 margin: 9px  0;
-	 overflow: hidden;
-	 background-color: gold;
+	 line-height:1.2em;
 }
 
 
@@ -49,43 +48,84 @@ p {
 .card-divider {
 	 width:50%;
 	 margin:0 auto;
-	 background-color:#c4c4c4;
+	 background-color:rgba(117,117,117,1);
 }
 
 .section-h1 {
-	 margin-bottom: 50px;
 	 font-family: raleway,helvetica,sans-serif;
 	 font-weight: 100;
-	 font-size: -webkit-xxx-large;
-	 color: palegreen;
+	 font-size: xx-large;
+	 font-weight:bold;
+	 color: rgba(255,193,7,1);
 	 -webkit-text-shadow:   0px   6px   7px    rgba(0 ,0 ,0 ,0.23 );
 	 -moz-text-shadow:0px 6px 7px rgba(0 ,0 ,0 ,0.23 );
 	 text-shadow:   0px   6px   7px   rgba(0 ,0 ,0 ,0.23 );
 }
 
+paragraph-link{
+	color:rgba(255,193,7,1);	
+}
+
 
 .navbar-header ,.landing-row ,  .about-me ,.experiance-row ,.pro-skills-row
-,.contact-row , .video-container ,row , footer {
+,.contact-row  ,row , footer {
 	 width: 100%;
 	 height: auto;
 }
 
-#navigation{
-	background-color:rgba(105,105,105,.6);
-	-webkit-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
-	-moz-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
-	box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+
+.pg-wrapper{
+background: rgba(33,33,33,1);
+background: -moz-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(33,33,33,1)), color-stop(100%, rgba(102,100,102,1)));
+background: -webkit-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: -o-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: -ms-linear-gradient(top, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+background: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 100%);
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#757575', endColorstr='#212121', GradientType=0 );*/
 }
 
-#nextPageIcon{
+
+.btn{
+	border: 3px solid rgba(255,193,7,1);
+	color:rgba(255,255,255,1);
+	border-radius:5px;	
+	padding:15px;
+}
+
+#topReturn{
 	position: fixed;
-    background-color: rgba(218,165,32,.6);
+    background-color: rgba(255,193,7,.6);
     opacity:.7;
     top: 85%;
     padding: 15px;
     right: 1.5%;
     z-index:1000;
+    display:none;
+    border-radius:5px;
 }
+
+
+
+/*
+ * -------------------------------------------------------------------------------------------
+ * 
+ * NAVIGATION AND MENU STYLING
+ * 
+ * -------------------------------------------------------------------------------------------
+ */
+#navigation{
+	background-color:rgba(25,118,210,.75);
+	-webkit-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+	box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+}
+
+#navCTA:hover{
+	background-color:rgb(255,193,7);
+	color:rgb(33,33,33);
+}
+
 
 #menuIcon{
 	padding:15px;
@@ -100,79 +140,160 @@ p {
 	margin-top:10px;
 }
 
+#menu li a{
+	border-radius:3px;
+	margin:5px auto;
+}
 
+/*
+ * -------------------------------------------------------------------------------------------
+ * 
+ * LANDING-ROW STYLING
+ * 
+ * -------------------------------------------------------------------------------------------
+ */
 
 .landing-row {
-	 height:100vh;
+	 height:960px;
+	 background-color:rgba(189,189,189,.55);
 }
 
 .landing-pg-wrapper{
-	background-image: url("Images/IMG_0510.jpg");
+	background-image: url("Images/IMG_0926.jpg");
 	background-blend-mode: multiply;
-	background-color: dodgerblue;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-color: rgba(33,150,243,1);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
     width:100%;
 }
 
 
-.video-container{
-	position:absolute;
-	top:0%;
-	left:0%;
-	height:100%;
-	width:100%;
-	overflow:hidden;
-}
-video {
-	 position: absolute;
-	 z-index: -100;
-	 opacity:.75;
+.video-wrapper {
+	 position: fixed;
+	 z-index: -1000;
 	 width:100%;
+	 height:100%;
+	 top:0;
+	 left:0;
+	 right:0;
+	 bottom:0;
+	 overflow:hidden;
+	 background-color:rgba(33,150,243,1);
+	 display:block;
+}
+
+#landingVideo{
+	width:100%;
 }
 
 
 
 .landing-info {
 	 position:absolute;
-	 top:30%;
-	 left:0%;
+	 background-color:rgba(33,150,243,.35);;
+	 top:25%;
+	 left:10%;
+	 right:10%;
+	 border-radius:10px;
+	 padding:15px;	
+	 /*
+	 -webkit-box-shadow: 1px 30px 175px -30px rgba(25,118,210,1);
+	 -moz-box-shadow: 1px 30px 175px -30px rgba(25,118,210,1);
+     box-shadow: 1px 30px 175px -30px rgba(25,118,210,1);
+      */
+    
 }
 
-h3 .lead{
-	animation-duration:3s;
-	animation-delay:2s;
+
+.landing-info .text-separator{
+	margin:auto 10px;
+}
+
+
+.landing-info .section-h1{
+	animation-duration:2.5s;
+	animation-delay:0s;
 	animation-iteration-count:1;
 }
 
-
-.about-me, .pro-skills-row {
-	 background-color: dimgrey;
+.landing-info .btn{
+	margin-top:25px;
 }
 
+.landing-info .btn:hover{
+	opacity:1;
+}
+
+
+
+h3 .lead{
+	animation-duration:2.75s;
+	animation-delay:2.5s;
+	animation-iteration-count:1;
+}
+
+.animated-span{
+	animation-duration:2s;
+	animation-delay:3s;
+	animation-iteration-count:1;
+}
+
+.landing-cta a{
+	margin:auto 10px;
+}
+
+
+/*
+ * -------------------------------------------------------------------------------------------
+ * 
+ * ABOUT-ME STYLING
+ * 
+ * -------------------------------------------------------------------------------------------
+ */
+
+.about-me, .pro-skills-row,.experiance-row,.contact-footer-wrapper {
+	 /*background-color: rgba(33,33,33,1);*/
+}
+
+
+.about-me-info{
+	 padding-bottom:50px;
+}
 
 
 .about-me-info   b {
 	 font-family: raleway,helvetica,sans-serif;
+	 padding-bottom:50px;
+}
+
+.section-advance{
+	position:relative;
+	left:50%;
+	margin:15px auto;
+}
+
+.picture-wrapper{
+	text-align:center;
+	text-align:-webkit-center;
+	display:block;
+	overflow:hidden;
+	min-height:350px;
+}
+
+#proPic {
+	margin-bottom:20px;
 }
 
 
 
-#proPicture {
-	 background-image: url("https://media.licdn.com/media/AAEAAQAAAAAAAAKHAAAAJDNkNDVlZjA0LWE2NmYtNDBmMS1hYzljLWY1ZjBjYWJmZDUzNg.jpg");
-	 background-size: cover;
-	 width: 100%;
-	 height: 100%;
-	 display: inline-box;
-}
-
-
-
-.experiance-row {
-	 background-color: #c4c4c4;
-	 margin-bottom: 5 vh;
-}
-
+/*
+ * -------------------------------------------------------------------------------------------
+ * 
+ * EXPERIENCE STYLING
+ * 
+ * -------------------------------------------------------------------------------------------
+ */
 
 
 .experiance   *{
@@ -181,40 +302,57 @@ h3 .lead{
 
 .job-responsibilites li{
 	padding-bottom:10px;
+	height:100%;
+	font-size:larger;
 }
 
 .current-role,.prev-role-1,.prev-role-2,.education{
 	background-blend-mode: multiply;
-	 background-size: cover;
+	 background-size: 100% 100%;
+	 background-repeat: no-repeat;
+	 background-position: 50% 50%;
 	 height: 100vh;
 }
 
 .current-role {
-	 background-color:dodgerblue ;
-	 /*background-image: url( "Images/IMG_1066.jpg" );*/
+	 background-color:rgba(33,150,243,1);
+	 background-image: url( 'Images/IMG_0510.jpg');
+	 background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
+	 height:75vh;
 }
 
 
 
 .prev-role-1 {
-	 background-color: palegreen;
-	/* background-image: url( "Images/IMG_0699.jpg" );*/
+	background-color: rgba(255,193,7,1);
+	 	 background-image: url( 'Images/IMG_0510.jpg');
+	 background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
+	height:65vh;
 }
 
 
 
 .prev-role-2 {
-	 background-color: goldenrod;
-	/* background-image: url( "Images/IMG_1107.jpg" ); */
+	 background-color: rgba(189,189,189,1);
+	 background-image: url( 'Images/IMG_0510.jpg');
+	 background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
+	height:60vh;
 }
 
-
-
 .education {
-	 background-color: dodgerblue;
+	background-color: rgba(189,189,189,1);
 	 background-image: url( "Images/EUP-Sign-Spring.jpg" );
+	background-size:150%;
+	 background-repeat:no-repeat;
+	 background-position:center;
 	 margin-bottom:7.5%;
-	 height:100vh;
+	 height:50vh;
 }
 
 .icon-helper{
@@ -224,22 +362,40 @@ h3 .lead{
 
 
 .card-info, .role-info {
-	 position: relative;
+	 position:relative;
 	 top: 25%;
 	 margin: 0   auto;
+	 width:100%
 }
 
+/*
+ * -------------------------------------------------------------------------------------------
+ * 
+ * CONTACT & FOOTER STYLING
+ * 
+ * -------------------------------------------------------------------------------------------
+ */
 
-.contact-footer-wrapper {
-	 background-color: dodgerblue;
+
+
+.contact-info{
+	padding:100px;
+	background-color:rgba(33,150,243,1);
 }
 
-
-.contact-info   img {
-	 display: inline;
-	 width: 75px;
-	 height: 75px 
+.contact-info h1 a:hover{
+	color:rgba(255,193,7,.7);
 }
+
+.contact-info:hover{
+	opacity:.65;
+}
+
+.contact-info a:hover{
+	opacity:1;
+	color:#FFC107;
+}
+
 
 .soc-media{
 	margin-top:20px;
@@ -247,7 +403,32 @@ h3 .lead{
 
 .soc-media-icons{
 	margin:auto 10px;
-	color:palegreen;
+	color:rgba(255,193,7,1);
+}
+
+
+form{
+	border-radius:10px;
+}
+
+.form-style{
+	background-color:rgba(33,150,243,1);
+	padding:40px;
+}
+
+label{
+	color:rgba(255,193,7,1);
+	font-weight:100;
+	
+}
+
+#sitemap{
+	margin-bottom:10px;
+}
+
+#siteMap span{
+	padding-left:15px
+	
 }
 
 footer {

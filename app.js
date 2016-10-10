@@ -3,26 +3,54 @@
  */
 
 var main = function() {
-
+	//Variable Declaration
 	var openMenuIcon = $('#menuOpen');
 	var closeMenuIcon = $('#menuClose');
 	var navMenu = $('#menu');
 	var jobPosition = $('.job-position');
+	
+	
+	var screen_Width = screen.width;
+	var screen_Height = screen.height;
+	var window_Height = $(window).height();
+	var window_Width = $(window).width();
+	
+	
+	
 
+
+	
+/**********************************************************************************
+ *                    NAVIGATION & MENU FUNCTIONS
+ **********************************************************************************
+ */
+	
 	
 	//Toggle Menu Function
 	
 	var toggleMenu = function(){
 		// Menu Open 
 		openMenuIcon.click(function() {
-
-			// Animating the menu after it is show
+			
+			// Animating the menu after it is shown
 			navMenu.toggle(500,function(){
 				/*
 				 * Callback function or basically the code that needs to be executed after the animation has finished.
 				 * this puts the non animated code on a delay to until the animation is finished. 
 				 */
-				navMenu.animate({"padding-top":"40px"},500);
+				if(screen_Width<=425){
+					$('.navbar-brand').css({"width":"100%"})
+					$('#menuClose').css({
+						"margin-botton":"10%"
+					});
+
+					
+				}else if(screen_Width<=768 && screen_Width>425){
+					navMenu.animate({"padding-top":"0px"},500);
+				}else{
+					navMenu.animate({"padding-top":"40px"},500);
+				}
+				
 				// turning the menu open icon off
 				openMenuIcon.toggle();
 
@@ -35,9 +63,19 @@ var main = function() {
 		// Menu Close 
 		closeMenuIcon.click(function() {
 			// Closing the menu
+			if(screen_Width<=425){
+				$('.navbar-brand').toggle();
+				$('navMenu li a:first').css({
+					"margin-top":"0%"
+				});
+			}else{
+				navMenu.animate({"padding-top":"0px"},500);
+			}
+		
+			
 			navMenu.toggle(500,function(){
 				//Callback Function: what's to execute after animation completes.
-				navMenu.animate({"padding-top":"0px"},500);
+				
 				// turning the menu close icon off.
 				closeMenuIcon.toggle();
 
@@ -49,8 +87,52 @@ var main = function() {
 		});
 	};
 	
+	//TOP RETURN ICON HOVER EFFECT. 
+	$('#topReturn').hover(function() {
+		// Mouse Enter
+		$(this).animate({
+			"opacity" : "1",
+		}, 1000);
+	}, function() {
+		// Mouse Leave
+		$(this).animate({
+			"opacity" : ".5",
+		},1000);
+	});
+
+	// Go back to the top of the page.
+	var returnToTop = function(){
+		$('#topReturn').click(function(e) {
+			$('html,body').animate({
+				scrollTop:0
+			},1250);
+			
+			e.preventDefault();
+		});
+	};
+	
+	/**********************************************************************************
+	 *                    LANDING PAGE FUNCTIONS
+	 **********************************************************************************
+	 */
+	
 
 	
+
+	/**********************************************************************************
+	 *                    ABOUT-ME FUNCTIONS
+	 **********************************************************************************
+	 */
+	
+	//Toggling the advance to next section button on screens smaller then 768px
+	if(screen_Width<768){
+		$('.section-advance').toggle();
+	}
+	
+	/**********************************************************************************
+	 *                   EXPERIENCE FUNCTIONS
+	 **********************************************************************************
+	 */
 	
 	
 	//Card Toggle Animation 
@@ -60,27 +142,38 @@ var main = function() {
 		// accomplishments.
 
 		jobPosition.click(function(event) {
-			var origBGColor = $(this).parent().css("background-color");
+			var origBGColor = $(this).css("background-color");
+			console.log("Current Card Background Color: " + origBGColor);
+			
+			var changedBGColor = "rga(105,105,105,1)";
+			
+		
+			
+			var cardId = $(this).attr('id');
+			console.log("Current Card ID: " + cardId);
+			
+			var cardJobDescID = $(this).children('.role-info').attr('id');
+			console.log("Current Card Job Description ID: " + cardJobDescID);
+			
 			
 			// Turning off the hover effect
 			$(this).css({
 				"opacity" : "1",
 				"background-image" : "none"
-			});
-			
-			var cardId = $(this).attr('id');
-			var cardJobDescID = $(this).children('.role-info').attr('id');
+			},"slow");
 
+			//Toggling off the Job Title 
+			if(screen_Width<768){
+				$("#" + cardId + " .role-desc").animate({
+					"top":"15%"
+				},500);
+			}
 			
 			
-			$("#" + cardId + " .card-info").slideToggle(500,function(){
-				jobPosition.animate({
-					"background-color":"rgba(105,105,105,1)"
-				},1550);
-			});
+			//Toggling off the Job Description and changing the background color. 
 			
-			$("#" + cardJobDescID).slideToggle(1000);
-
+			$("#" + cardJobDescID).slideToggle(1000,function(){});
+			
 		});
 	};
 	
@@ -89,88 +182,84 @@ var main = function() {
 
 	// Hover Effect on Cards.
 	var toggleCardHover = function(){
+		
 		$('.job-position').hover(function() {
+			
+			var $this = $(this);
+			var startingBG = $this.attr('background-imgae');
+			$this;
+
 			// Mouse Enter function
-			$(this).css({
-				"background-image" : "url('Images/IMG_0510.jpg')",
-				"opacity" : ".65",
-				"animation-duration":"2s",
-				"animation-delay":"0s",
-				"animation-iteration-count":"1"
-			}, 1000);
-			$(this).addClass("animated rotateInUpLeft");
+			if($this.attr('id') !=='education-card'){
+				$this.css({
+					"background-size -":"100%",
+					"opacity" : ".40",
+				}, 1000);
+				$this;
+			}else{
+				$this.css({
+					"background-image":"url('Images/IMG_EUP Sign-Alt.jpg')"
+				},1000);
+				$this;
+			}
+
 		}, function() {
 
 			// Mouse Leave function
 			$(this).css({
-				"background-image" : "none",
+				"background-image" : "startingBG",
 				"opacity" : "1",
 				"animation-duration":"0s",
 				"animation-delay":"0s",
 				"animation-iteration-count":"1"
 			}, 1000);
-			$(this).removeClass("animated rotateInUpRight");
+			$(this);
 		});
 
 	};
 	
+	
+	/**********************************************************************************
+	 *                   CONTACT & FOOTER FUNCTIONS
+	 **********************************************************************************
+	 */
 	
 	// Hover Effect on Social Media Icons.
 	$('.soc-media-icons').hover(function() {
 		// Mouse Enter
 		$(this).css("color", "rgba(218,165,32,.6");
 	}, function() {
-		$(this).css("color", "palegreen");
+		//Mouse Leave
+		$(this).css("color", "rgba(218,165,32,1)");
 	});
 	
 	
 	
-	$('.btn').hover(function() {
-		// Mouse Enter
-		$(this).animate({
-			"opacity" : "1",
-			"background-color":"palegreen"
-		}, 1000).addClass("animated infinite tada");
-	}, function() {
-		// Mouse Leave
-		$(this).animate({
-			"opacity" : "1",
+	
+	/**********************************************************************************
+	 *                  GENERAL HOVER FUNCTIONS
+	 **********************************************************************************
+	 */
+	
+	$('.btn').hover(function(){
+		//Mouse Enter 
+		$(this).css({
+			"color":"rgb(33,33,33)",
+			"background-color":"rgb(255,193,7)"
+		});
+	},function(){
+		//Mouse Leave
+		$(this).css({
+			"color":"rgba(255,255,255,1)",
 			"background-color":"transparent"
-		},1000).removeClass("animated infinite tada");
-	});
-	
-
-	
-	//NEXT PAGE ICON HOVER EFFECT. 
-	$('#nextPageIcon').hover(function() {
-		// Mouse Enter
-		$(this).animate({
-			"opacity" : "1",
-			"background-color":"palegreen"
-		}, 1000).addClass("animated infinite tada");
-	}, function() {
-		// Mouse Leave
-		$(this).animate({
-			"opacity" : ".5",
-			"background-color":"goldenrod"
-		},1000).removeClass("animated infinite tada");
-	});
-
-	// Advance to the next slide.
-	$('#nextPageIcon').click(function() {
-		
-		var currSection = $(this).closest('.section');
-		console.log(currSection);
-		
-		var nextSection = $(this).closest('.section').next();
-		console.log(nextSection);
-		nextSection.animate({
-			"scrollTop":nextSection.scollTop + currSection.offset()
-		},1250);
-		
+		});
 	});
 
 
+	/**********************************************************************************
+	 *                   SCROLLING  FUNCTIONS
+	 **********************************************************************************
+	 */
 	
 	
 	//Smooth Scrolling Animation for anchors. 
@@ -194,8 +283,165 @@ var main = function() {
 			}
 		});
 		
-	};    
+	}; 
 	
+	
+	
+	//Return to top scroll animation
+	$(window).scroll(function(){
+		
+		
+		var positionFromTop = $(window).scrollTop();
+		console.log("Current positon from the top of the Window - Scroll Function (positionFromTop)" + positionFromTop);
+		
+		var educationCard = 0;
+		var educationTop = $('#education-card').position().top;
+		console.log("Education Element Top (contactMeTop)" + educationTop);
+		console.log(educationTop < positionFromTop);
+		
+		var topReturn = $('#topReturn');
+		
+		
+		
+		if(educationTop < positionFromTop){
+			topReturn.show();
+		}else{
+			topReturn.hide();
+		}
+
+	});
+	
+	
+	/**********************************************************************************
+	 *                   RESPONSIVE LOAD FUNCTIONS
+	 **********************************************************************************
+	 */
+	
+	//Screen size function, that allows the landing page and other elements to be adjusted according to screen sizes. 
+	
+	var screenSize_CSS_loader = function(){
+		//Mobile-SMALL
+		if(screen_Width <= 320){
+			$('#topReturn').css({"display":"none"});
+			$("#navigation").css({"width":screen_Width});
+			$('.landing-row').css({"height":window_Height});
+			$(".job-description").css({"font-size":"smaller"});
+			$(".section-h1").css({"font-size":"-webkit-xx-large"}).removeClass("pull-right").addClass("text-center");
+			$(".landing-info").css({
+				"top":"25%",
+				"left":"0%",
+				"right":"0%"
+			});
+			
+			}
+		//Mobile-SMALL to Mobile-MEDIUM
+		else if (screen_Width > 320 && screen_Width<=375){
+				$('#topReturn').css({"display":"none"});
+				$("#navigation").css({"width":screen_Width});
+				$('.landing-row').css({"height":window_Height});
+				$(".job-description").css({"font-size":"smaller"});
+				$(".section-h1").css({"font-size":"-webkit-xx-large"}).removeClass("pull-right").addClass("text-center");
+				$(".landing-info").css({
+					"top":"20.5%",
+					"right":"15%",
+					"left":"15%"
+				});
+			}
+		//Mobile-LARGE to Tablet
+		else if(screen_Width > 375 && screen_Width<=768){
+				$('#topReturn').css({"display":"none"});
+				$("#navigation").css({"width":screen_Width});
+				$('.landing-row').css({"height":window_Height});
+				$(".job-description").css({"font-size":"smaller"});
+				$(".section-h1").css({"font-size":"-webkit-xx-large"}).removeClass("pull-right").addClass("text-center");
+				$(".landing-info").css({
+					"top":"15%",
+					"left":"8%",
+					"right":"8%"
+				});
+			}
+		//Tablet
+		else if(screen_Width > 425 && screen_Width<=768){
+			$('#topReturn').css({"display":"none"});
+			$("#navigation").css({"width":screen_Width});
+			$('.landing-row').css({"height":window_Height});
+			$(".job-description").css({"font-size":"smaller"});
+			$(".section-h1").css({"font-size":"-webkit-xx-large"}).removeClass("pull-right").addClass("text-center");
+			$(".landing-info").css({
+				"top":"25%",
+				"left":"15%",
+				"right":"15%"
+			});
+			$(".role-info").css({"top":"0"});
+		}
+		
+		
+	};
+	
+	
+	var landingRowHeight = function(){
+		
+		//Determining the height of the landing row on load when the video background is present.
+		
+		var vid = $('#landingVideo');
+		var landingRow = $('.landing-row');
+		var vid_width = vid.width();
+		var vid_height = vid.height();
+		var aspectRatio = 1920/1080;
+		
+		
+		console.log("Original video width :" +vid_width);
+		console.log("Original video height :" + vid_height);
+		console.log("Original video Aspect Ratio : " + aspectRatio);
+		
+		var newHeight = window_Width/aspectRatio;
+		
+		//If the screen is smaller than tablet size, we will just show a regular background image.
+		if(window_Width >=768){
+			landingRow.css({"height":newHeight});
+		}else{
+			vid.hide();
+			landingRow.css({
+				"background-image":"url(Images/IMG_0581.jpg)",
+				"background-repeat":"no repeat",
+				"background-position":"50% 50%",
+				"background-size":"cover",
+			});
+		}
+		
+	}
+	
+
+	
+	/**********************************************************************************
+	 *                   GENERAL INFORMATION FUNCTIONS
+	 **********************************************************************************
+	 */
+	
+	var startingInformation = function (){
+		
+		console.log("=======================================");
+		console.log("Screen Information");
+		console.log("=======================================");
+		console.log("Screen Width (px): " + screen_Width);
+		console.log("Screen Height (px): " + screen_Height);
+		
+		console.log("=======================================");
+		
+		console.log("Window Information");
+		console.log("=======================================");
+		console.log("Window Width (px): " + window_Width);
+		console.log("Window Height (px): " + window_Height);
+		
+		console.log("=======================================");
+	}
+	
+	
+	
+	
+
+	
+
 		
 
 	
@@ -204,18 +450,32 @@ var main = function() {
 	 * -------------- ANIMATION CALLS SECTION --------------------------
 	 * *****************************************************************
 	 */
+
 	
+	//Loading that is going to take care of CSS positioning for certain screen sizes. 
 	
+	$(this).load(screenSize_CSS_loader()).load(startingInformation());
+
+	$('body').on("resize",screenSize_CSS_loader());
 	
 	//Menu animations. 
 	$('#menuIcons').click(toggleMenu());
+
+	//Landing rown Animations 
+	$(".landing-row").load(landingRowHeight()).on("resize",landingRowHeight());
+	
+	//About Me Animations
+
+
 	
 	//Experience Card animation. 
 	$('.job-position').click(toggleCard());
 	$('.job-position').click(toggleCardHover());
 	$('*').scroll(anchorSmoothScroll());
+	$("#topReturn").click(returnToTop());
 	
 	
+	//Contact & footer animations.
 	
 	
 	
