@@ -111,10 +111,14 @@ var main = function() {
 		});
 	};
 	
+	
+	$('#navigation').css({width:screen_Width});
+	
 	/**********************************************************************************
 	 *                    LANDING PAGE FUNCTIONS
 	 **********************************************************************************
 	 */
+	$('.landing-row').css({height:window_Height});
 	
 
 	
@@ -295,9 +299,9 @@ var main = function() {
 		console.log("Current positon from the top of the Window - Scroll Function (positionFromTop)" + positionFromTop);
 		
 		var educationCard = 0;
-		var educationTop = $('#education-card').position().top;
-		console.log("Education Element Top (contactMeTop)" + educationTop);
-		console.log(educationTop < positionFromTop);
+		var educationTop = $('#education-card').position().top - navMenu.height();
+		console.log("Education Element Top (educationTop)" + educationTop);
+		console.log("Education Top < PositionFromTop =" + (educationTop < positionFromTop));
 		
 		var topReturn = $('#topReturn');
 		
@@ -317,8 +321,43 @@ var main = function() {
 	 **********************************************************************************
 	 */
 	
-	//Screen size function, that allows the landing page and other elements to be adjusted according to screen sizes. 
+	var sizeToScreen = function(){
+		if(screen_Width <= 425){
+			$('.section-h1').removeClass("pull-right").removeClass("pull-left").addClass("text-center");
+			$('p').css({"line-height":"1.2em"});
+			
+			//Landing
+			$('.landing-row').css({"background-color":"rgba(33,33,33,.55)"});
+			$('.landing-info h3').css({
+				"font-size":"19px"
+			});
+			
+			$('.landing-info h3 span .text-separator').css({
+				"margin":"0"
+			});
+			
+			//About
+			$('.lang-list').addClass("text-center");
+			$("#proPic").css({"max-height":"450px"});
+			
+			//Experience
+			$('.card-info').css({"top":"10%"});
+			$('#current-role-card,#prev-role-1-card,#education-card').css({
+				"height":"100%"
+			});
+			
+			
+			//Contact/Footer
+			$('.contact-info').css({
+				"padding":"50px"
+			});
+			
+			$('.contact-info  a h1').html("Email Me!");
+		}//End of If for screen sizes smaller than 425px
+	}
 	
+	//Screen size function, that allows the landing page and other elements to be adjusted according to screen sizes. 
+	/*
 	var screenSize_CSS_loader = function(){
 		//Mobile-SMALL
 		if(screen_Width <= 320){
@@ -377,7 +416,7 @@ var main = function() {
 		
 		
 	};
-	
+	*/
 	
 	var landingRowHeight = function(){
 		
@@ -454,9 +493,9 @@ var main = function() {
 	
 	//Loading that is going to take care of CSS positioning for certain screen sizes. 
 	
-	$(this).load(screenSize_CSS_loader()).load(startingInformation());
+	$(this).load(startingInformation());
 
-	$('body').on("resize",screenSize_CSS_loader());
+	$('body').on("load",sizeToScreen());
 	
 	//Menu animations. 
 	$('#menuIcons').click(toggleMenu());
@@ -472,11 +511,11 @@ var main = function() {
 	$('.job-position').click(toggleCard());
 	$('.job-position').click(toggleCardHover());
 	$('*').scroll(anchorSmoothScroll());
-	$("#topReturn").click(returnToTop());
+	
 	
 	
 	//Contact & footer animations.
-	
+	$("#topReturn").click(returnToTop());
 	
 	
 	

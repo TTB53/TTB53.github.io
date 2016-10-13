@@ -100,9 +100,9 @@ background: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 
     top: 85%;
     padding: 15px;
     right: 1.5%;
-    z-index:1000;
-    display:none;
     border-radius:5px;
+    display:none;
+    z-index:1000;
 }
 
 
@@ -119,6 +119,7 @@ background: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 
 	-webkit-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
 	-moz-box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
 	box-shadow: 0px 7px 10px -4px rgba(0,0,0,1);
+	width:100%;
 }
 
 #navCTA:hover{
@@ -155,7 +156,9 @@ background: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 
 
 .landing-row {
 	 height:960px;
-	 background-color:rgba(189,189,189,.55);
+	background-color:rgba(189,189,189,.55);
+    background-blend-mode:multiply;
+
 }
 
 .landing-pg-wrapper{
@@ -166,6 +169,8 @@ background: linear-gradient(to bottom, rgba(33,33,33,1) 0%, rgba(102,100,102,1) 
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
     width:100%;
+
+    	 
 }
 
 
@@ -307,19 +312,16 @@ h3 .lead{
 }
 
 .current-role,.prev-role-1,.prev-role-2,.education{
-	background-blend-mode: multiply;
+	 background-blend-mode: multiply;
 	 background-size: 100% 100%;
 	 background-repeat: no-repeat;
-	 background-position: 50% 50%;
+	 background-position: 100% 100%;
 	 height: 100vh;
 }
 
 .current-role {
 	 background-color:rgba(33,150,243,1);
 	 background-image: url( 'Images/IMG_0510.jpg');
-	 background-size:150%;
-	 background-repeat:no-repeat;
-	 background-position:center;
 	 height:75vh;
 }
 
@@ -327,10 +329,7 @@ h3 .lead{
 
 .prev-role-1 {
 	background-color: rgba(255,193,7,1);
-	 	 background-image: url( 'Images/IMG_0510.jpg');
-	 background-size:150%;
-	 background-repeat:no-repeat;
-	 background-position:center;
+	background-image: url( 'Images/IMG_0510.jpg');
 	height:65vh;
 }
 
@@ -339,20 +338,14 @@ h3 .lead{
 .prev-role-2 {
 	 background-color: rgba(189,189,189,1);
 	 background-image: url( 'Images/IMG_0510.jpg');
-	 background-size:150%;
-	 background-repeat:no-repeat;
-	 background-position:center;
-	height:60vh;
+	 height:60vh;
 }
 
 .education {
 	background-color: rgba(189,189,189,1);
-	 background-image: url( "Images/EUP-Sign-Spring.jpg" );
-	background-size:150%;
-	 background-repeat:no-repeat;
-	 background-position:center;
-	 margin-bottom:7.5%;
-	 height:50vh;
+	background-image: url( "Images/EUP-Sign-Spring.jpg" );
+	margin-bottom:7.5%;
+	height:50vh;
 }
 
 .icon-helper{
@@ -434,3 +427,17 @@ label{
 footer {
 	 margin-top:15px;
 }
+
+
+
+
+/************************************************************
+ * MEDIA QUERIES MEDIA QUERIES MEDIA QUERIES MEDIA QUERIES
+ * **********************************************************/
+
+	
+
+ 
+ 
+ 
+ 
