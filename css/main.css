@@ -1,0 +1,184 @@
+body {
+  background: #f2f2f2;
+  font-family: Raleway;
+  margin: 0;
+  padding: 0;
+  line-height: 24px; }
+
+.brand-logo {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  height: inherit; }
+
+.navbar-default {
+  background-color: #1a1a1a; }
+  .navbar-default a {
+    color: #f2f2f2; }
+    .navbar-default a:hover {
+      color: #00c284; }
+
+.ctaContact {
+  background-color: #fbb03b;
+  color: #f2f2f2; }
+
+.ctaHeader {
+  font-family: Engagement;
+  font-size: 84px;
+  color: #fbb03b;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+  -webkit-perspective-origin: 30% 30%;
+  -moz-perspective-origin: 30% 30%;
+  perspective-origin: 30% 30%; }
+
+#Navigation:hover {
+  background-color: gray;
+  -webkit-transition: all 0.75s linear;
+  -moz-transition: all 0.75s linear;
+  transition: all 0.75s linear; }
+
+.menu a {
+  color: #f2f2f2; }
+  .menu a:hover {
+    text-decoration: underline;
+    color: #00c284; }
+    .menu a:hover .ctaContact {
+      background-color: #cc7e04; }
+    .menu a:hover .nav-icon {
+      color: #00c284; }
+.menu i {
+  margin: auto 10px; }
+.menu .nav-icon {
+  color: #004e5a; }
+
+#Landing {
+  padding-top: 50px;
+  color: #f2f2f2;
+  background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg");
+  background-color: #004e5a;
+  background-blend-mode: multiply;
+  background-size: cover;
+  height: 100vh; }
+  #Landing hgroup {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    left: 0; }
+    #Landing hgroup h1 {
+      font-size: 108px;
+      margin-bottom: 40px; }
+
+#Experience {
+  background-color: #00c284;
+  height: 75vh; }
+  #Experience .container-fluid {
+    height: 100%;
+    position: relative;
+    padding: 0; }
+    #Experience .container-fluid .job {
+      height: 100%; }
+  #Experience .job {
+    padding: 10px; }
+  #Experience .current-job {
+    background-color: #00af77; }
+  #Experience .prev-job-1 {
+    background: #009263; }
+    #Experience .prev-job-1 .job-description {
+      display: none; }
+  #Experience .prev-job-2 {
+    background: #007e56; }
+    #Experience .prev-job-2:hover {
+      background: #00c284;
+      transition: background 1.5s linear; }
+    #Experience .prev-job-2 .active-job {
+      background: #007e56;
+      transition: background 1.5s linear; }
+    #Experience .prev-job-2 .job-description {
+      display: none; }
+  #Experience h1 {
+    font-family: AbrilFatFace;
+    font-size: 60px;
+    color: #f2f2f2; }
+  #Experience .job-title {
+    margin-bottom: 50px; }
+
+#SkillsandProjects {
+  background-color: #1a1a1a;
+  background-image: url("http://www.hutui6.com/data/out/40/67500104-code-wallpapers.jpg");
+  background-blend-mode: screen;
+  background-size: cover; }
+
+.project-highlight {
+  min-height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .project-highlight:hover {
+    -webkit-transition: background-color 2s linear;
+    -moz-transition: background-color 2s linear;
+    transition: background-color 2s linear; }
+
+.project-wrapper {
+  background-color: #343434;
+  padding: 20px; }
+
+.project-bg {
+  background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-color: #004e5a;
+  background-blend-mode: multiply;
+  height: 200px;
+  text-align: center; }
+
+.project-name {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.project-information {
+  padding: 20px;
+  background-color: white; }
+
+.project-link {
+  color: #00c284;
+  text-decoration: none;
+  padding: 10px; }
+  .project-link:hover {
+    color: #005c3f; }
+
+#Education {
+  background-color: #004e5a;
+  background-image: url("http://www.boisdale.co.uk/blog/wp-content/uploads/2009/05/tartan.jpg");
+  background-blend-mode: soft-light;
+  background-repeat: none;
+  background-size: cover;
+  color: #f2f2f2;
+  height: 35vh;
+  text-align: center;
+  position: relative; }
+
+.undergrad {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+#About {
+  background-color: #f2f2f2; }
+
+#Contact {
+  background-color: #004e5a;
+  text-decoration: none; }
+
+footer {
+  margin-top: 20px; }
+
+.soc-media-icons {
+  color: #00c284;
+  text-decoration: none;
+  padding: 0 20px; }
+  .soc-media-icons:hover {
+    color: #005c3f; }
+
+/*# sourceMappingURL=main.css.map */

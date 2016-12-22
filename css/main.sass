@@ -1,0 +1,215 @@
+$primaryDark : #004e5a
+$primaryAccent: #00c284
+$ctaColor: #fbb03b
+$darkColor: #1a1a1a
+$lightColor: #f2f2f2
+
+@import "bourbon/bourbon"
+
+
+body
+	background: $lightColor
+	font-family: Raleway
+	margin: 0
+	padding: 0
+	line-height: 24px
+
+.brand-logo
+	@include position(absolute, 0 null null 50px)
+	height: inherit
+
+
+.navbar-default
+	background-color: $darkColor
+
+	a
+		color: $lightColor
+
+		&:hover
+			color: $primaryAccent
+
+
+.ctaContact
+	background-color: $ctaColor
+	color: $lightColor
+
+.ctaHeader
+	font-family: Engagement
+	font-size: 84px
+	color: $ctaColor
+	@include perspective(300px)
+	@include perspective-origin(30% 30%)
+
+
+#Navigation
+	&:hover
+		background-color: lighten($darkColor, 40%)
+		@include transition(all .75s linear)
+
+
+.menu
+	a
+		color: $lightColor
+		&:hover
+			text-decoration: underline
+			color: $primaryAccent
+
+			.ctaContact
+				background-color:  darken($ctaColor, 20%)
+
+			.nav-icon
+				color: $primaryAccent
+
+
+	i
+		@include margin(auto 10px auto 10px)
+
+	.nav-icon
+		color: $primaryDark
+
+
+
+#Landing
+	padding-top: 50px
+	color: $lightColor
+	background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg")
+	background-color: $primaryDark
+	background-blend-mode: multiply
+	background-size: cover
+	height: 100vh
+
+	hgroup
+		@include position(absolute, 40% 0 null 0)
+
+		h1
+			font-size: 108px
+			margin-bottom: 40px
+
+#Experience
+	background-color: $primaryAccent
+	height: 75vh
+
+	.container-fluid
+		height: 100%
+		position: relative
+		padding: 0
+		
+		.job
+			height: 100%
+
+	.job
+		padding: 10px
+
+	.current-job
+		background-color: shade($primaryAccent,10%)
+
+	.prev-job-1
+		background: shade($primaryAccent, 25%)
+
+		.job-description
+			display: none
+
+	.prev-job-2
+		background: shade($primaryAccent, 35%)
+
+		&:hover
+			background: $primaryAccent
+			transition: background 1.5s linear
+
+		.active-job
+			background: shade($primaryAccent, 35%)
+			transition: background 1.5s linear
+
+		.job-description
+			display: none
+
+
+	h1
+		font-family: Abril+FatFace
+		font-size:  60px
+		color: $lightColor
+
+	.job-title
+		margin-bottom:  50px
+
+
+#SkillsandProjects
+	background-color: $darkColor
+	background-image: url("http://www.hutui6.com/data/out/40/67500104-code-wallpapers.jpg")
+	background-blend-mode: screen
+	background-size: cover
+
+.project-highlight
+	min-height: 100px
+	margin-top: 20px
+	margin-bottom: 20px
+
+	&:hover
+		@include transition(background-color 2.0s linear)
+
+.project-wrapper
+	background-color: lighten($darkColor,10%)
+	padding: 20px
+
+.project-bg
+	background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg")
+	background-size: cover
+	background-position: center
+	background-color: $primaryDark
+	background-blend-mode: multiply
+	height: 200px
+	text-align: center
+
+.project-name
+	padding-left: 10px
+	padding-right: 10px
+
+.project-information
+	padding: 20px
+	background-color: lighten($lightColor,10%)
+
+.project-link
+	color: $primaryAccent
+	text-decoration: none
+	padding: 10px
+
+	&:hover
+		color: darken($primaryAccent, 20%)
+
+
+#Education
+	background-color: $primaryDark
+	background-image: url("http://www.boisdale.co.uk/blog/wp-content/uploads/2009/05/tartan.jpg")
+	background-blend-mode: soft-light
+	background-repeat: none
+	background-size: cover
+	color: $lightColor
+	height: 35vh
+	text-align: center
+	position: relative
+
+.undergrad
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+
+#About
+	background-color: $lightColor
+
+
+#Contact
+	background-color: $primaryDark
+	text-decoration: none
+
+footer
+	margin-top: 20px
+
+.soc-media-icons
+	color: $primaryAccent
+	text-decoration: none
+	padding: 0 20px
+
+	&:hover
+		color: darken($primaryAccent, 20%)
