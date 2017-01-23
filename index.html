@@ -15,20 +15,6 @@
 <meta http-equiv="X-UA-Compatiable" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-<!--  BOOTSTRAP THEMES-CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-	crossorigin="anonymous" />
-
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-	crossorigin="anonymous" />
-
-
 <!-- FONT AWESOME SCRIPT Tag-->
 <script src="https://use.fontawesome.com/555e36c00f.js"></script>
 <!-- Backup maxcdn FONT AWESOME  -->
@@ -37,10 +23,12 @@
 <!-- GOOGLE FONT LINK -->
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Engagement|Raleway" rel="stylesheet">
 
+<!--  BOOTSTRAP THEMES-CSS -->
+<link href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
 
 <!--  Style sheet link -->
-<link rel="stylesheet"
-	href="css/main.css" />
+<link href="css/main.css" rel="stylesheet" />
 
 
 <title>Anthony Thomas-Bell</title>
@@ -59,27 +47,37 @@
 			7. Contact Me
  -->
 
-
+<!--Loader that is going to show up while the page is being generated. -->
+<div class = "loader"></div>
 
 <!--***** 1.NAVIGATION *****-->
 <nav id = "Navigation" class = "navbar navbar-default navbar-fixed-top">
-	<div class = "container-fluid">
+	<div class = "container-fluid navContainer">
 		<div class = "navbar-header">
-
 			<!--  Anthony Thomas Bell Logo  -->
-			<a class = "navbar-brand" href="#Landing">
+			<a class = "navbar-brand slide-section" href="#Landing">
 				<img class = "img-responsive brand-logo" alt="Anthony Thomas-Bell Logo" src="assets/atb_logo.png">
 			</a>
 
 		</div>
 
 		<ul class = "nav navbar-nav pull-right menu">
-			<li><a href="#Experience"><i class = "fa fa-suitcase fa-md nav-icon"></i>Experience</a></li>
-			<li><a href="#SkillsandProjects"><i class = "fa fa-cogs fa-md nav-icon"></i>Skills & Projects</a></li>
-			<li><a href="#About"><i class = "fa fa-user fa-md nav-icon"></i>About Me</a></li>
+			<li><a class = "slide-section" href="#About" ><i class = "fa fa-user fa-md nav-icon"></i>About Me</a></li>
+			<li><a class = "slide-section" href="#Experience" ><i class = "fa fa-suitcase fa-md nav-icon"></i>Experience</a></li>
+			<li><a class = "slide-section" href="#SkillsandProjects" ><i class = "fa fa-cogs fa-md nav-icon"></i>Skills & Projects</a></li>
+			<li><a class = "slide-section" href="#Contact" ><i class = "fa fa-handshake-o fa-md nav-icon"></i>Contact</a></li>
+
 			<!--<li><a href="#Contact"><i class = "fa fa-phone fa-md nav-icon"></i>Contact Me</a></li>-->
-			<li><a class ="ctaContact" href="mailto:athomasbell53@gmail.com"><i class = "fa fa-envelope fa-md nav-icon"></i>Email Me</a></li>
+			<li><a class = "slide-section ctaContact" href="mailto:athomasbell53@gmail.com"><i class = "fa fa-envelope fa-md nav-icon"></i>Email Me</a></li>
 		</ul>
+
+<!--Mobile Navigation -->
+		<span class = "mobile-nav-toggle pull-right">
+			<div class = "bar-top"></div>
+			<div class = "bar-center"></div>
+			<div class = "bar-bottom"></div>
+		</span>
+
 
 	</div><!-- END OF CONTAINER-FLUID -->
 </nav><!-- END OF NAVIGATION -->
@@ -96,222 +94,11 @@
 
 		<hr/ style = "width:25%"><!-- Has inline stlye applied. -->
 
-		<h5>"Creating something is all about problem-solving - Phillip Seymour Hoffman"</h5>
+		<h4>"Creating something is all about problem-solving" - Phillip Seymour Hoffman</h4>
 	</hgroup>
 
 	</div><!-- END OF CONTAINER-FLUID-->
 </section><!-- END OF LANDING PAGE SECTION -->
-
-
-<!--***** 3.EXPERIENCE *****-->
-<section id = "Experience">
-	<div class ="container-fluid">
-
-		<!--<h1 class = "ctaHeader text-center">Experience</h1>-->
-
-		<div class = "job current-job active-job col-lg-8 col-md-8 col-sm-12 col-xs-12">
-
-			<hgroup class = "job-title text-center">
-				<h1> Business Analyst</h1>
-				<h2>Genpact LLC</h2>
-				<h4>April 2016 - Present</h4>
-			</hgroup>
-
-			<ul class = "job-description">
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-			</ul>
-
-
-		</div><!-- END OF CURRENT JOB -->
-
-		<div class = "job prev-job-1 col-lg-2 col-md-2 col-sm-12 col-xs-12">
-
-			<hgroup class = "job-title text-center">
-				<h1> Process Analyst</h1>
-				<h2>Genpact LLC</h2>
-				<h4>June 2013 -  March 2016</h4>
-			</hgroup>
-
-			<ul class = "job-description">
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-			</ul>
-
-
-		</div><!-- END OF PREV JOB 1-->
-
-		<div class = "job prev-job-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
-
-			<hgroup class = "job-title text-center">
-				<h1>Loan Closer</h1>
-				<h2>Solution Star Settlement Services</h2>
-				<h4>June 2012 - June 2013</h4>
-			</hgroup>
-
-			<ul class = "job-description" >
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</li>
-			</ul>
-
-
-		</div><!-- END OF PREV JOB 2-->
-
-
-	</div><!-- END OF CONTAINER-FLUID-->
-</section><!-- END OF EXPERIENCE SECTION -->
-
-
-<!--***** 4.SKILLS & PROJECTS *****-->
-<section id = "SkillsandProjects">
-	<div class ="container-fluid">
-
-	<!--<h1 class = "ctaHeader text-center"> Skills and Projects </h1>-->
-
-	<div class = "row project-highlight-row">
-
-		<!-- PROJECT HIGHLIGHT 1 -->
-		<div class = "project-highlight text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			<div class = "container-fluid">
-				<div class = "project-wrapper">
-				<div class = "project-bg">
-					<h1 class = "ctaHeader project-name"> Project Hightlight 1</h1>
-
-				</div><!--End of the project-bg-->
-
-
-					<div class = "project-information">
-
-						<h3>Project Idea: Web Design and Development</h3>
-						<h4>Technologies Used: HTML5, CSS3, JS</h4>
-
-						<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-					</div>
-
-					<a href="https://github.com/TTB53" alt="Anthony Thomas-Bell Github">
-					<i class="fa fa-github fa-5x project-link"></i>
-					</a>
-
-				</div><!--END OF THE PROJECT WRAPPER-->
-			</div><!--END OF CONTAINER FLUID-->
-		</div><!--END OF PROJECT HIGHLIGHT 1-->
-
-		<!-- PROJECT HIGHLIGHT 2 -->
-		<div class = "project-highlight text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			<div class = "container-fluid">
-				<div class = "project-wrapper">
-				<div class = "project-bg">
-					<h1 class = "ctaHeader project-name"> Project Hightlight 2</h1>
-
-				</div><!--End of the project-bg-->
-
-
-					<div class = "project-information">
-
-						<h3>Project Idea: Productivity</h3>
-						<h4>Technologies Used: Java, Swing</h4>
-
-						<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-					</div>
-
-					<a href="https://github.com/TTB53" alt="Anthony Thomas-Bell Github">
-					<i class="fa fa-github fa-5x project-link"></i>
-					</a>
-
-
-				</div><!--END OF THE PROJECT WRAPPER-->
-			</div><!--END OF CONTAINER FLUID-->
-		</div><!--END OF PROJECT HIGHLIGHT 2-->
-
-		<!-- PROJECT HIGHLIGHT 3 -->
-		<div class = "project-highlight text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			<div class = "container-fluid">
-				<div class = "project-wrapper">
-				<div class = "project-bg">
-					<h1 class = "ctaHeader project-name"> Project Hightlight 3</h1>
-
-				</div><!--End of the project-bg-->
-
-
-					<div class = "project-information">
-
-						<h3>Project Idea: Integrated Biling Application</h3>
-						<h4>Technologies Used: Project Management, VBA, SQL</h4>
-
-						<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-					</div>
-
-					<a href="https://github.com/TTB53" alt="Anthony Thomas-Bell Github">
-					<i class="fa fa-github fa-5x project-link"></i>
-					</a>
-
-
-				</div><!--END OF THE PROJECT WRAPPER-->
-			</div><!--END OF CONTAINER FLUID-->
-		</div><!--END OF PROJECT HIGHLIGHT 3-->
-
-
-
-
-
-
-	</div><!--END OF PROJECT HIGHLIGHT ROW -->
-
-
-
-
-	</div><!-- END OF CONTAINER-FLUID-->
-</section><!-- END OF SKILLS SECTION -->
-
-
-<!--***** 5.EDUCATION *****-->
-<section id = "Education">
-	<div class ="container-fluid">
-
-<!--<h1 class = "ctaHeader text-center">Education</h1>-->
-
-			<hgroup class = "undergrad text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h2 class = "ctaHeader"> Edinboro University of Pennsylvania</h2>
-				<h4>B.A. Journalism and Mass Communications - Public Relations</h4>
-				<h4>May 2012</h4>
-			</hgroup>
-	</div><!-- END OF CONTAINER-FLUID-->
-</section><!-- END OF EDUCATION SECTION -->
 
 <!--***** 6.ABOUT ME *****-->
 <section id = "About">
@@ -345,6 +132,214 @@
 	</div><!-- END OF CONTAINER-FLUID-->
 </section><!-- END OF ABOUT ME SECTION -->
 
+<!--***** 5.EDUCATION *****-->
+<section id = "Education">
+	<div class ="container-fluid">
+
+<!--<h1 class = "ctaHeader text-center">Education</h1>-->
+
+			<hgroup class = "undergrad text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h2 class = "ctaHeader"> Edinboro University of Pennsylvania</h2>
+				<h4>B.A. Journalism and Mass Communications - Public Relations</h4>
+				<h4>May 2012</h4>
+			</hgroup>
+	</div><!-- END OF CONTAINER-FLUID-->
+</section><!-- END OF EDUCATION SECTION -->
+
+
+<!--***** 3.EXPERIENCE *****-->
+<section id = "Experience">
+	<div class ="container-fluid jobContainer">
+
+		<!--<h1 class = "ctaHeader text-center">Experience</h1>-->
+
+		<div id = "current-job" class = "job active-job col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+			<hgroup class = "job-title text-center">
+				<h1> Business Analyst</h1>
+				<h2>Genpact LLC</h2>
+				<h4>April 2016 - Present</h4>
+			</hgroup>
+
+			<ul class = "job-description active-job-desc">
+
+
+				<li>Project Lead on internal application providing real-time analytics, reporting, and invoicing information through system integration and process automation.</li>
+
+				<li>Work with management and functional product owners to identify, plan, develop, and implement new business optimization solutions.</li>
+
+				<li>Gather requirements, prepare user stories, and test newly developed tools and applications.</li>
+
+				<li>Develop, test, and write VBA and SQL queries to aid in the automation of business processes and tools.</li>
+
+
+			</ul>
+
+
+		</div><!-- END OF CURRENT JOB -->
+
+		<div  id = "prev-job-1"  class = "job  col-lg-2 col-md-2 col-sm-12 col-xs-12">
+
+			<hgroup class = "job-title text-center">
+				<h1> Process Analyst</h1>
+				<h2>Genpact LLC</h2>
+				<h4>June 2013 -  March 2016</h4>
+			</hgroup>
+
+			<ul class = "job-description">
+
+				<li>Implemented business optimization projects, reporting tools, through various process management practices.</li>
+
+				<li>Improved efficiency, reduced turn around time, and maximized profit by automating previously non-existent processes.</li>
+
+				<li>Investigated discrepancies in billing information and data sources, to resolve customer disputes and promote prompt and accurate billing.</li>
+
+				<li>Prepared and presented monthly, quarterly, and yearly financial reports across various levels of the organization.</li>
+
+			</ul>
+
+
+		</div><!-- END OF PREV JOB 1-->
+
+		<div  id = "prev-job-2"  class = "job col-lg-2 col-md-2 col-sm-12 col-xs-12">
+
+			<hgroup class = "job-title text-center">
+				<h1>Loan Closer</h1>
+				<h2>Solution Star Settlement Services</h2>
+				<h4>June 2012 - June 2013</h4>
+			</hgroup>
+
+			<ul class = "job-description" >
+
+				<li>Prepared, reviewed, and submitted settlement statements for home loan closings.</li>
+
+				<li>Fielded and resolved issues pertaining to loan closing packages.</li>
+
+				<li>Interfaced with clients and lenders to illicit additional and necessary information for the completion of closing packages.</li>
+
+			</ul>
+
+
+		</div><!-- END OF PREV JOB 2-->
+
+
+	</div><!-- END OF CONTAINER-FLUID-->
+</section><!-- END OF EXPERIENCE SECTION -->
+
+<!-- Back to  Top -->
+<div id="back-to-top">
+<a  class = "slide-section" href = #Landing><i class = "fa fa-chevron-circle-up fa-lg"></i></a>
+</div>
+
+<!--***** 4.SKILLS & PROJECTS *****-->
+<section id = "SkillsandProjects">
+	<div class ="container-fluid SkillsandProjectsContainer">
+
+	<!--<h1 class = "ctaHeader text-center"> Skills and Projects </h1>-->
+
+	<div class = "row project-highlight-row">
+
+		<!-- PROJECT HIGHLIGHT 1 -->
+		<div class = "project-highlight text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
+			<div class = "container-fluid">
+				<div class = "project-wrapper">
+				<div class = "project-bg">
+					<h1 class = "ctaHeader project-name"> Portfolio Website</h1>
+
+				</div><!--End of the project-bg-->
+
+
+					<div class = "project-information">
+
+						<h3>Project Idea: Build my Portfolio Website from Scratch</h3>
+						<h4>Technologies Used: HTML5, CSS3, JS</h4>
+
+						<p>	Planned, designed and coded my presonal portfolio website from scratch.
+							In this processI utilized certain frameworks, such as bootstrap, jquery, bourbon, and Sass to take create a responsive, and
+							user friendly experience across all devices.
+						</p>
+
+					</div>
+
+					<a href="https://github.com/TTB53" alt="Anthony Thomas-Bell Github">
+					<i class="fa fa-github-alt fa-5x project-link"></i>
+					</a>
+
+				</div><!--END OF THE PROJECT WRAPPER-->
+			</div><!--END OF CONTAINER FLUID-->
+		</div><!--END OF PROJECT HIGHLIGHT 1-->
+
+		<!-- PROJECT HIGHLIGHT 2 -->
+		<div class = "project-highlight text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
+			<div class = "container-fluid">
+				<div class = "project-wrapper">
+				<div class = "project-bg">
+					<h1 class = "ctaHeader project-name"> Productivity</h1>
+
+				</div><!--End of the project-bg-->
+
+
+					<div class = "project-information">
+
+						<h3>Project Idea: Create a Java Desktop application that will block the internet for a user-defined time.</h3>
+						<h4>Technologies Used: Java, Swing</h4>
+
+						<p>	planned a java application utilizing swing to create an application that allows the user to input a set time, and the application will not allow you to waste time by accessing the internet. </p>
+
+					</div>
+
+					<a href="https://github.com/TTB53" alt="Anthony Thomas-Bell Github">
+					<i class="fa fa-github-alt fa-5x project-link"></i>
+					</a>
+
+
+				</div><!--END OF THE PROJECT WRAPPER-->
+			</div><!--END OF CONTAINER FLUID-->
+		</div><!--END OF PROJECT HIGHLIGHT 2-->
+
+		<!-- PROJECT HIGHLIGHT 3 -->
+		<div class = "project-highlight text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
+			<div class = "container-fluid">
+				<div class = "project-wrapper">
+				<div class = "project-bg">
+					<h1 class = "ctaHeader project-name"> Integrated Billing Tool</h1>
+
+				</div><!--End of the project-bg-->
+
+
+					<div class = "project-information">
+
+						<h3>Project Idea: Integrated Biling Application</h3>
+						<h4>Technologies Used: Project Management, VBA, SQL</h4>
+
+						<p>	created a billing tool that on a daily basis sends out updates and notifictiaons on items that need to be completed. This tool is a real-time.</p>
+
+					</div>
+
+					<a href="https://github.com/TTB53" alt="Anthony Thomas-Bell Github">
+					<i class="fa fa-github-alt fa-5x project-link"></i>
+					</a>
+
+
+				</div><!--END OF THE PROJECT WRAPPER-->
+			</div><!--END OF CONTAINER FLUID-->
+		</div><!--END OF PROJECT HIGHLIGHT 3-->
+
+
+
+
+
+
+	</div><!--END OF PROJECT HIGHLIGHT ROW -->
+
+
+
+
+
+	</div><!-- END OF CONTAINER-FLUID-->
+</section><!-- END OF SKILLS SECTION -->
+
+
 <!--***** 7.CONTACT ME *****-->
 <section id = "Contact">
 	<div class ="container-fluid">
@@ -373,8 +368,18 @@
 		</a>
 
 		<a href="https://github.com/TTB53" alt="Anthony Thomas-Bell Github">
-		<i class="fa fa-github fa-5x soc-media-icons"></i>
+		<i class="fa fa-github-alt fa-5x soc-media-icons"></i>
 		</a>
+
+		<div id = "site-map">
+			<a class = "slide-section" href="#About"><i class = "fa fa-user fa-md nav-icon"></i>About Me</a>
+			<span>/</span>
+			<a class = "slide-section" href="#Experience" ><i class = "fa fa-suitcase fa-md nav-icon"></i>Experience</a>
+			<span>/</span>
+			<a class = "slide-section" href="#SkillsandProjects"><i class = "fa fa-cogs fa-md nav-icon"></i>Skills & Projects</a>
+			<span>/</span>
+			<a class = "slide-section" href="#Contact"><i class = "fa fa-handshake-o fa-md nav-icon"></i>Contact</a>
+		</div>
 
 
 	</div>
@@ -385,17 +390,30 @@
 
 
 
-<!-- JQUERY CDN -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- JQUERY 3.1.1.min file -->
+<script src="js/jquery-3.1.1.min.js"></script>
+
+
+<!--JQuery test script-->
+<script type="text/javascript">
+window.onload = function()
+{
+    if (window.jQuery)
+    {
+        console.log('jQuery is loaded');
+    }
+    else
+    {
+      console.log('jQuery is not loaded');
+    }
+}
+</script>
+
 <!--  BOOTSTRAP THEME -JS -->
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-	<!--  Main JS file -->
-	<script
-				src="js/main.js"></script>
-
+<script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<!--  Main JS file make sure JQuery,bootstrap, and any other links come before your customized  javascript file. -->
+<script src="js/main.js"></script>
+<!--comment-->
 
 
 
