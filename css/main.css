@@ -5,22 +5,71 @@ body {
   padding: 0;
   line-height: 24px; }
 
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  border: 16px solid #004e5a;
+  border-top: 16px solid #29ffbb;
+  border-radius: 50%;
+  display: none;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(360deg); } }
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 .brand-logo {
   position: absolute;
   top: 0;
-  left: 50px;
+  left: 0;
+  -webkit-transform: translate(25%, 25%);
+  -moz-transform: translate(25%, 25%);
+  -ms-transform: translate(25%, 25%);
+  -o-transform: translate(25%, 25%);
+  transform: translate(25%, 25%);
   height: inherit; }
 
-.navbar-default {
-  background-color: #1a1a1a; }
-  .navbar-default a {
-    color: #f2f2f2; }
-    .navbar-default a:hover {
-      color: #00c284; }
+a {
+  color: #00c284; }
+  a:hover {
+    color: #29ffbb; }
 
-.ctaContact {
+.navbar-default .navbar-nav li a {
+  color: #1a1a1a; }
+  .navbar-default .navbar-nav li a:hover {
+    text-decoration: underline;
+    color: #00a6c0; }
+.navbar-default .navbar-nav li .ctaContact {
   background-color: #fbb03b;
-  color: #f2f2f2; }
+  color: #004e5a;
+  border-radius: 5px; }
+  .navbar-default .navbar-nav li .ctaContact:hover {
+    background-color: tint(#fbb03b, 10%);
+    color: #00a6c0; }
 
 .ctaHeader {
   font-family: Engagement;
@@ -31,35 +80,66 @@ body {
   perspective: 300px;
   -webkit-perspective-origin: 30% 30%;
   -moz-perspective-origin: 30% 30%;
-  perspective-origin: 30% 30%; }
+  perspective-origin: 30% 30%;
+  margin-top: nll;
+  margin-bottom: 20px; }
 
-#Navigation:hover {
-  background-color: gray;
-  -webkit-transition: all 0.75s linear;
-  -moz-transition: all 0.75s linear;
-  transition: all 0.75s linear; }
+.navContainer {
+  padding: 10px 10px; }
+  .navContainer i {
+    margin: auto 10px; }
+  .navContainer .nav-icon {
+    color: #004e5a; }
 
-.menu a {
-  color: #f2f2f2; }
-  .menu a:hover {
-    text-decoration: underline;
-    color: #00c284; }
-    .menu a:hover .ctaContact {
-      background-color: #cc7e04; }
-    .menu a:hover .nav-icon {
-      color: #00c284; }
-.menu i {
-  margin: auto 10px; }
-.menu .nav-icon {
-  color: #004e5a; }
+.mobile-nav-toggle .bar-top,
+.mobile-nav-toggle .bar-center,
+.mobile-nav-toggle .bar-bottom {
+  width: 35px;
+  height: 5px;
+  background-color: #004e5a;
+  margin: 6px 0;
+  transition: 0.4s; }
+
+.mobile-nav-toggle:hover .bar-top {
+  -webkit-transform: rotate(-45deg) translate(-10px, 15px);
+  -moz-transform: rotate(-45deg) translate(-10px, 15px);
+  -ms-transform: rotate(-45deg) translate(-10px, 15px);
+  -o-transform: rotate(-45deg) translate(-10px, 15px);
+  transform: rotate(-45deg) translate(-10px, 15px); }
+.mobile-nav-toggle:hover .bar-center {
+  opacity: 0; }
+.mobile-nav-toggle:hover .bar-bottom {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+@media screen and (max-width: 980px) {
+  .menu {
+    display: none; }
+
+  .navbar-header {
+    float: left !important; } }
+#back-to-top {
+  position: fixed;
+  color: #00c284;
+  top: 89%;
+  right: 3%;
+  font-size: 40px;
+  z-index: 100;
+  margin-bottom: 2px; }
+  #back-to-top:hover {
+    color: #29ffbb; }
 
 #Landing {
   padding-top: 50px;
   color: #f2f2f2;
-  background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg");
+  background-image: url("../assets/bw_skyline.jpg");
   background-color: #004e5a;
   background-blend-mode: multiply;
   background-size: cover;
+  background-position: center;
   height: 100vh; }
   #Landing hgroup {
     position: absolute;
@@ -70,71 +150,118 @@ body {
       font-size: 108px;
       margin-bottom: 40px; }
 
+#About {
+  background-color: #f2f2f2;
+  height: 60vh; }
+
+#Education {
+  background-color: #004e5a;
+  background-image: url("../assets/book_and_pen.jpeg");
+  background-blend-mode: multiply;
+  background-repeat: none;
+  background-size: cover;
+  color: #f2f2f2;
+  height: 35vh;
+  text-align: center;
+  position: relative;
+  width: 100%; }
+
+.undergrad {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 #Experience {
   background-color: #00c284;
-  height: 75vh; }
-  #Experience .container-fluid {
+  height: 100vh; }
+  #Experience .jobContainer {
     height: 100%;
     position: relative;
     padding: 0; }
-    #Experience .container-fluid .job {
+    #Experience .jobContainer .job {
       height: 100%; }
+      #Experience .jobContainer .job .job-description {
+        height: 100%;
+        display: none; }
   #Experience .job {
     padding: 10px; }
-  #Experience .current-job {
-    background-color: #00af77; }
-  #Experience .prev-job-1 {
+  #Experience .active-job:hover {
+    background: #59d7af;
+    box-shadow: 0 0 1em #29ffbb;
+    transition: background 0.25s linear; }
+  #Experience .active-job-desc {
+    color: #1a1a1a;
+    font-size: medium;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0; }
+    #Experience .active-job-desc li {
+      margin-right: auto;
+      margin-bottom: 20px;
+      margin-left: auto; }
+  #Experience #prev-job-1 {
     background: #009263; }
-    #Experience .prev-job-1 .job-description {
-      display: none; }
-  #Experience .prev-job-2 {
+    #Experience #prev-job-1:hover {
+      background: #59d7af;
+      transition: background 0.25s linear; }
+  #Experience #prev-job-2 {
     background: #007e56; }
-    #Experience .prev-job-2:hover {
-      background: #00c284;
-      transition: background 1.5s linear; }
-    #Experience .prev-job-2 .active-job {
-      background: #007e56;
-      transition: background 1.5s linear; }
-    #Experience .prev-job-2 .job-description {
-      display: none; }
+    #Experience #prev-job-2:hover {
+      background: #33ce9d;
+      transition: background 0.25s linear; }
   #Experience h1 {
     font-family: AbrilFatFace;
     font-size: 60px;
     color: #f2f2f2; }
   #Experience .job-title {
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
 
 #SkillsandProjects {
   background-color: #1a1a1a;
-  background-image: url("http://www.hutui6.com/data/out/40/67500104-code-wallpapers.jpg");
-  background-blend-mode: screen;
-  background-size: cover; }
+  background-image: url();
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  height: 100vh; }
 
 .project-highlight {
   min-height: 100px;
   margin-top: 20px;
   margin-bottom: 20px; }
-  .project-highlight:hover {
-    -webkit-transition: background-color 2s linear;
-    -moz-transition: background-color 2s linear;
-    transition: background-color 2s linear; }
 
 .project-wrapper {
   background-color: #343434;
   padding: 20px; }
 
 .project-bg {
-  background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg");
+  background-image: url("../assets/bw_skyline.jpg");
   background-size: cover;
   background-position: center;
   background-color: #004e5a;
   background-blend-mode: multiply;
   height: 200px;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
 
 .project-name {
   padding-left: 10px;
-  padding-right: 10px; }
+  padding-right: 10px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto; }
 
 .project-information {
   padding: 20px;
@@ -143,42 +270,34 @@ body {
 .project-link {
   color: #00c284;
   text-decoration: none;
-  padding: 10px; }
+  padding: 10px;
+  width: 100%; }
   .project-link:hover {
-    color: #005c3f; }
-
-#Education {
-  background-color: #004e5a;
-  background-image: url("http://www.boisdale.co.uk/blog/wp-content/uploads/2009/05/tartan.jpg");
-  background-blend-mode: soft-light;
-  background-repeat: none;
-  background-size: cover;
-  color: #f2f2f2;
-  height: 35vh;
-  text-align: center;
-  position: relative; }
-
-.undergrad {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-
-#About {
-  background-color: #f2f2f2; }
+    color: #29ffbb; }
 
 #Contact {
-  background-color: #004e5a;
-  text-decoration: none; }
+  background-color: #004e5a; }
+  #Contact:hover {
+    color: #29ffbb; }
+  #Contact a {
+    text-decoration: none; }
+    #Contact a h1:hover {
+      color: #fcc062; }
 
 footer {
-  margin-top: 20px; }
+  margin-top: 70px; }
+
+#site-map {
+  color: #00c284;
+  margin-top: 25px; }
+  #site-map:hover {
+    color: #29ffbb; }
 
 .soc-media-icons {
   color: #00c284;
   text-decoration: none;
   padding: 0 20px; }
   .soc-media-icons:hover {
-    color: #005c3f; }
+    color: #29ffbb; }
 
 /*# sourceMappingURL=main.css.map */

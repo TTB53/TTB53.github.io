@@ -4,7 +4,15 @@ $ctaColor: #fbb03b
 $darkColor: #1a1a1a
 $lightColor: #f2f2f2
 
+$primaryGlow: lighten($primaryAccent,20%)
+$primaryDarkGlow: lighten($primaryDark, 20%)
+$tintCTA: tint($ctaColor,10%)
+
+//screen size media queries.
+$mediumScreen: 980px
+
 @import "bourbon/bourbon"
+//bourbon directional are ( top right  bottom  left)
 
 
 body
@@ -14,24 +22,59 @@ body
 	padding: 0
 	line-height: 24px
 
+.loader
+	position: absolute
+	left: 50%
+	top: 50%
+	z-index: 100
+	width: 100px
+	height: 100px
+	border: 16px solid $primaryDark
+	border-top: 16px solid $primaryGlow
+	border-radius: 50%
+	display: none
+	@include animation(spin 2s linear infinite)
+
+	@include keyframes(spin)
+		0%
+			@include transform(rotate(0deg))
+		100%
+			@include transform(rotate(360deg))
+
+
 .brand-logo
-	@include position(absolute, 0 null null 50px)
+	@include position(absolute, 0 null null 0)
+	@include transform(translate(25% ,25%))
 	height: inherit
 
 
+a
+	color: $primaryAccent
+
+	&:hover
+		color: $primaryGlow
+
+//Changing the Navbar link color, and hover effect.
 .navbar-default
-	background-color: $darkColor
+	.navbar-nav
+		li
+			a
+				color: $darkColor
 
-	a
-		color: $lightColor
-
-		&:hover
-			color: $primaryAccent
+				&:hover
+					text-decoration: underline
+					color: $primaryDarkGlow
 
 
-.ctaContact
-	background-color: $ctaColor
-	color: $lightColor
+			.ctaContact
+				background-color: $ctaColor
+				color: $primaryDark
+				border-radius: 5px
+
+				&:hover
+					background-color: $tintCTA
+					color: $primaryDarkGlow
+
 
 .ctaHeader
 	font-family: Engagement
@@ -39,26 +82,10 @@ body
 	color: $ctaColor
 	@include perspective(300px)
 	@include perspective-origin(30% 30%)
+	@include margin(nll  null 20px null)
 
-
-#Navigation
-	&:hover
-		background-color: lighten($darkColor, 40%)
-		@include transition(all .75s linear)
-
-
-.menu
-	a
-		color: $lightColor
-		&:hover
-			text-decoration: underline
-			color: $primaryAccent
-
-			.ctaContact
-				background-color:  darken($ctaColor, 20%)
-
-			.nav-icon
-				color: $primaryAccent
+.navContainer
+	padding: 10px 10px
 
 
 	i
@@ -68,14 +95,52 @@ body
 		color: $primaryDark
 
 
+.mobile-nav-toggle
+	.bar-top,
+	.bar-center,
+	.bar-bottom
+		width: 35px
+		height: 5px
+		background-color: $primaryDark
+		margin: 6px 0
+		transition: 0.4s
+.mobile-nav-toggle:hover
+	.bar-top
+		@include transform(rotate(-45deg) translate(-10px,15px))
+	.bar-center
+		opacity: 0
+	.bar-bottom
+		@include transform(rotate(45deg))
+
+@media screen and (max-width: $mediumScreen)
+	.menu
+		display: none
+	.navbar-header
+		float: left !important
+
+
+#back-to-top
+	position: fixed
+	color: $primaryAccent
+	top: 89%
+	right: 3%
+	font-size: 40px
+	z-index: 100
+	@include margin(null null 2px null)
+
+	&:hover
+		color: lighten($primaryAccent, 20%)
+
+
 
 #Landing
 	padding-top: 50px
 	color: $lightColor
-	background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg")
+	background-image: url("../assets/bw_skyline.jpg")
 	background-color: $primaryDark
 	background-blend-mode: multiply
 	background-size: cover
+	background-position:  center
 	height: 100vh
 
 	hgroup
@@ -85,44 +150,82 @@ body
 			font-size: 108px
 			margin-bottom: 40px
 
+#About
+	background-color: $lightColor
+	height: 60vh
+
+
+#Education
+	background-color: $primaryDark
+	background-image: url("../assets/book_and_pen.jpeg")
+	background-blend-mode: multiply
+	background-repeat: none
+	background-size: cover
+	color: $lightColor
+	height: 35vh
+	text-align: center
+	position: relative
+	width: 100%
+
+.undergrad
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+
+
 #Experience
 	background-color: $primaryAccent
-	height: 75vh
+	height: 100vh
 
-	.container-fluid
+	.jobContainer
 		height: 100%
 		position: relative
 		padding: 0
-		
+
 		.job
 			height: 100%
+
+			.job-description
+				height: 100%
+				display: none
 
 	.job
 		padding: 10px
 
-	.current-job
-		background-color: shade($primaryAccent,10%)
+	.active-job
 
-	.prev-job-1
+		&:hover
+			background: tint($primaryAccent,35%)
+			box-shadow: .0 0 1em $primaryGlow
+			transition: background .25s linear
+
+	.active-job-desc
+		color: $darkColor
+		font-size: medium
+		position: absolute
+		top: 35%
+		left: 0
+		right: 0
+
+
+		li
+			@include margin(null auto 20px auto)
+
+	#prev-job-1
 		background: shade($primaryAccent, 25%)
 
-		.job-description
-			display: none
+		&:hover
+			background: tint($primaryAccent,35%)
+			transition: background .25s linear
 
-	.prev-job-2
+	#prev-job-2
 		background: shade($primaryAccent, 35%)
 
 		&:hover
-			background: $primaryAccent
-			transition: background 1.5s linear
-
-		.active-job
-			background: shade($primaryAccent, 35%)
-			transition: background 1.5s linear
-
-		.job-description
-			display: none
-
+			background: tint($primaryAccent,20%)
+			transition: background .25s linear
 
 	h1
 		font-family: Abril+FatFace
@@ -131,38 +234,52 @@ body
 
 	.job-title
 		margin-bottom:  50px
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+
 
 
 #SkillsandProjects
 	background-color: $darkColor
-	background-image: url("http://www.hutui6.com/data/out/40/67500104-code-wallpapers.jpg")
-	background-blend-mode: screen
+	background-image: url()
+	background-blend-mode: overlay
+	background-position:  center
 	background-size: cover
+	height: 100vh
 
 .project-highlight
 	min-height: 100px
 	margin-top: 20px
 	margin-bottom: 20px
 
-	&:hover
-		@include transition(background-color 2.0s linear)
 
 .project-wrapper
 	background-color: lighten($darkColor,10%)
 	padding: 20px
 
+
 .project-bg
-	background-image: url("https://static.pexels.com/photos/94704/pexels-photo-94704.jpeg")
+	background-image: url("../assets/bw_skyline.jpg")
 	background-size: cover
 	background-position: center
 	background-color: $primaryDark
 	background-blend-mode: multiply
 	height: 200px
 	text-align: center
+	position: relative
+
 
 .project-name
 	padding-left: 10px
 	padding-right: 10px
+	position: absolute
+	top: 35%
+	left: 50%
+	@include transform(translate(-50%,-50%))
+	width: 100%
+	height: auto
 
 .project-information
 	padding: 20px
@@ -172,39 +289,47 @@ body
 	color: $primaryAccent
 	text-decoration: none
 	padding: 10px
+	width: 100%
 
 	&:hover
-		color: darken($primaryAccent, 20%)
+		color: lighten($primaryAccent, 20%)
 
 
-#Education
-	background-color: $primaryDark
-	background-image: url("http://www.boisdale.co.uk/blog/wp-content/uploads/2009/05/tartan.jpg")
-	background-blend-mode: soft-light
-	background-repeat: none
-	background-size: cover
-	color: $lightColor
-	height: 35vh
-	text-align: center
-	position: relative
-
-.undergrad
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translate(-50%,-50%)
 
 
-#About
-	background-color: $lightColor
+
+
 
 
 #Contact
 	background-color: $primaryDark
-	text-decoration: none
+
+	&:hover
+		color: lighten($primaryAccent, 20%)
+
+	a
+		text-decoration: none
+
+		h1
+
+			&:hover
+				color: tint($ctaColor, 20%)
+
+
+
+
+
 
 footer
-	margin-top: 20px
+	margin-top: 70px
+
+#site-map
+	color: $primaryAccent
+	margin-top: 25px
+
+	&:hover
+		color: lighten($primaryAccent, 20%)
+
 
 .soc-media-icons
 	color: $primaryAccent
@@ -212,4 +337,4 @@ footer
 	padding: 0 20px
 
 	&:hover
-		color: darken($primaryAccent, 20%)
+		color: lighten($primaryAccent, 20%)
