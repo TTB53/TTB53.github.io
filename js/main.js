@@ -28,8 +28,16 @@ var displayLoader = function(){
 };
 
 
-
 //Site Specific functions
+var mobileNavClicked = function(){
+  $('.mobile-nav-toggle').on("click",function(){
+    console.log($(this).children());
+    $('.mobile-nav-toggle').children().toggleClass("activated");
+    $('.menu').toggle("slow");
+  });
+};
+
+
 var smoothScroll = function(){
 
   $('.slide-section').on("click",function(e){
@@ -148,6 +156,7 @@ var changeJobs = function(){
 //All functions will be called in the main function which will in turn be called once the document has finished loading.
 var main = function(){
   //displayLoader();
+  mobileNavClicked();
   smoothScroll();
   toggle_backToTop();
   changeJobs();
