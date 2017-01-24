@@ -44,8 +44,8 @@ body
 
 .brand-logo
 	@include position(absolute, 0 null null 0)
-	@include transform(translate(25% ,25%))
-	height: inherit
+	@include transform(translate(25% ,10%))
+	height: 60px
 
 
 a
@@ -96,6 +96,8 @@ a
 
 
 .mobile-nav-toggle
+	cursor: pointer
+
 	.bar-top,
 	.bar-center,
 	.bar-bottom
@@ -104,12 +106,13 @@ a
 		background-color: $primaryDark
 		margin: 6px 0
 		transition: 0.4s
-.mobile-nav-toggle:hover
-	.bar-top
+
+.mobile-nav-toggle
+	.bar-top.activated
 		@include transform(rotate(-45deg) translate(-10px,15px))
-	.bar-center
+	.bar-center.activated
 		opacity: 0
-	.bar-bottom
+	.bar-bottom.activated
 		@include transform(rotate(45deg))
 
 @media screen and (max-width: $mediumScreen)
@@ -117,7 +120,6 @@ a
 		display: none
 	.navbar-header
 		float: left !important
-
 
 #back-to-top
 	position: fixed
