@@ -92,7 +92,8 @@ a {
     color: #004e5a; }
 
 .mobile-nav-toggle {
-  cursor: pointer; }
+  cursor: pointer;
+  display: none; }
   .mobile-nav-toggle .bar-top,
   .mobile-nav-toggle .bar-center,
   .mobile-nav-toggle .bar-bottom {
@@ -116,13 +117,9 @@ a {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg); }
+.mobile-nav-toggle .bar-top:hover, .mobile-nav-toggle .bar-bottom:hover {
+  box-shadow: 2px 1px 2px #00a6c0; }
 
-@media screen and (max-width: 980px) {
-  .menu {
-    display: none; }
-
-  .navbar-header {
-    float: left !important; } }
 #back-to-top {
   position: fixed;
   color: #00c284;
@@ -138,6 +135,7 @@ a {
   padding-top: 50px;
   color: #f2f2f2;
   background-image: url("../assets/bw_skyline.jpg");
+  background-color: #0e5f94;
   background-color: #004e5a;
   background-blend-mode: multiply;
   background-size: cover;
@@ -178,16 +176,16 @@ a {
   background-color: #00c284;
   height: 100vh; }
   #Experience .jobContainer {
-    height: 100%;
-    position: relative;
-    padding: 0; }
+    padding: 0;
+    height: 100%; }
     #Experience .jobContainer .job {
+      padding: 10px;
       height: 100%; }
+      #Experience .jobContainer .job .job-title {
+        margin-bottom: 50px; }
       #Experience .jobContainer .job .job-description {
         height: 100%;
         display: none; }
-  #Experience .job {
-    padding: 10px; }
   #Experience .active-job:hover {
     background: #59d7af;
     box-shadow: 0 0 1em #29ffbb;
@@ -217,65 +215,55 @@ a {
     font-family: AbrilFatFace;
     font-size: 60px;
     color: #f2f2f2; }
-  #Experience .job-title {
-    margin-bottom: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0; }
 
 #SkillsandProjects {
-  background-color: #1a1a1a;
+  background-color: #f2f2f2;
   background-image: url();
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
   height: 100vh; }
-
-.project-highlight {
-  min-height: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px; }
-
-.project-wrapper {
-  background-color: #343434;
-  padding: 20px; }
-
-.project-bg {
-  background-image: url("../assets/bw_skyline.jpg");
-  background-size: cover;
-  background-position: center;
-  background-color: #004e5a;
-  background-blend-mode: multiply;
-  height: 200px;
-  text-align: center;
-  position: relative; }
-
-.project-name {
-  padding-left: 10px;
-  padding-right: 10px;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: auto; }
-
-.project-information {
-  padding: 20px;
-  background-color: white; }
-
-.project-link {
-  color: #00c284;
-  text-decoration: none;
-  padding: 10px;
-  width: 100%; }
-  .project-link:hover {
-    color: #29ffbb; }
+  #SkillsandProjects .SkillsandProjectsContainer {
+    position: relative; }
+  #SkillsandProjects .project-highlight {
+    min-height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  #SkillsandProjects .project-wrapper {
+    background-color: #343434;
+    padding: 20px; }
+  #SkillsandProjects .project-bg {
+    background-image: url("../assets/bw_skyline.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #004e5a;
+    background-blend-mode: multiply;
+    height: 200px;
+    text-align: center;
+    position: relative; }
+  #SkillsandProjects .project-name {
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto; }
+  #SkillsandProjects .project-information {
+    padding: 20px;
+    background-color: white; }
+  #SkillsandProjects .project-link {
+    color: #00c284;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%; }
+    #SkillsandProjects .project-link:hover {
+      color: #29ffbb; }
 
 #Contact {
   background-color: #004e5a; }
@@ -301,5 +289,49 @@ footer {
   padding: 0 20px; }
   .soc-media-icons:hover {
     color: #29ffbb; }
+
+@media screen and (max-width: 768px) {
+  .ctaHeader {
+    font-size: 36px; }
+
+  #Landing .ctaHeader {
+    font-size: 84px; }
+
+  #Landing h3 {
+    font-size: 18px; }
+
+  #Landing h4 {
+    font-size: 14px; }
+
+  #About, #Education, #SkillsandProjects {
+    height: auto; }
+
+  .about-me-img {
+    position: relative;
+    left: 12.5%;
+    margin-bottom: 10px; }
+
+  #Experience .jobContainer .job .job-description, #Experience .jobContainer .job .active-job-desc {
+    display: inline-block;
+    position: inherit;
+    font-size: 14px; } }
+@media screen and (max-width: 992px) {
+  .mobile-nav-toggle {
+    display: block; }
+
+  .menu {
+    display: none; }
+
+  .navbar-header {
+    float: left !important; }
+
+  #Experience {
+    height: auto; }
+
+  .active-job-desc {
+    position: relative; }
+
+  .jobContainer {
+    height: inherit; } }
 
 /*# sourceMappingURL=main.css.map */
