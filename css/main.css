@@ -216,6 +216,15 @@ a {
     font-size: 60px;
     color: #f2f2f2; }
 
+.job-ellipses {
+  position: absolute;
+  left: 50%;
+  top: 290%; }
+  .job-ellipses i {
+    color: #1a1a1a; }
+    .job-ellipses i:hover {
+      color: #00a6c0; }
+
 #SkillsandProjects {
   background-color: #f2f2f2;
   background-image: url();
@@ -266,7 +275,12 @@ a {
       color: #29ffbb; }
 
 #Contact {
-  background-color: #004e5a; }
+  background-color: #004e5a;
+  background-image: url("../assets/ask_more_questions_dark.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply; }
   #Contact:hover {
     color: #29ffbb; }
   #Contact a {
@@ -292,7 +306,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   .ctaHeader {
-    font-size: 36px; }
+    font-size: 42px; }
 
   #Landing .ctaHeader {
     font-size: 84px; }
@@ -303,7 +317,8 @@ footer {
   #Landing h4 {
     font-size: 14px; }
 
-  #About, #Education, #SkillsandProjects {
+  #About,
+  #SkillsandProjects {
     height: auto; }
 
   .about-me-img {
@@ -314,7 +329,13 @@ footer {
   #Experience .jobContainer .job .job-description, #Experience .jobContainer .job .active-job-desc {
     display: inline-block;
     position: inherit;
-    font-size: 14px; } }
+    font-size: 14px; }
+
+  .job-ellipses {
+    display: none; }
+
+  #SkillsandProjects {
+    height: auto; } }
 @media screen and (max-width: 992px) {
   .mobile-nav-toggle {
     display: block; }
@@ -332,6 +353,12 @@ footer {
     position: relative; }
 
   .jobContainer {
-    height: inherit; } }
+    height: inherit; }
+
+  .job-ellipses {
+    display: none; }
+
+  #SkillsandProjects {
+    height: auto; } }
 
 /*# sourceMappingURL=main.css.map */

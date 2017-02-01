@@ -159,6 +159,7 @@ a
 	height: 60vh
 
 
+
 #Education
 	background-color: $primaryDark
 	background-image: url("../assets/book_and_pen.jpeg")
@@ -234,6 +235,19 @@ a
 		font-size:  60px
 		color: $lightColor
 
+
+.job-ellipses
+	position: absolute
+	left: 50%
+	top: 290%
+
+	i
+		color: $darkColor
+
+		&:hover
+			color: $primaryDarkGlow
+
+
 #SkillsandProjects
 	background-color: $lightColor
 	background-image: url()
@@ -292,6 +306,12 @@ a
 
 #Contact
 	background-color: $primaryDark
+	background-image: url("../assets/ask_more_questions_dark.jpg")
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	background-blend-mode: multiply
+
 
 	&:hover
 		color: lighten($primaryAccent, 20%)
@@ -331,7 +351,7 @@ footer
 
 @media screen and (max-width:$smallScreen)
 	.ctaHeader
-		font-size: 36px
+		font-size: 42px
 
 	#Landing .ctaHeader
 		font-size: 84px
@@ -342,7 +362,8 @@ footer
 	#Landing h4
 		font-size: 14px
 
-	#About,#Education,#SkillsandProjects
+	#About,
+	#SkillsandProjects
 		height: auto
 
 	.about-me-img
@@ -357,7 +378,11 @@ footer
 				position: inherit
 				font-size: 14px
 
+	.job-ellipses
+		display: none
 
+	#SkillsandProjects
+		height: auto
 
 @media screen and (max-width: $mediumScreen)
 	.mobile-nav-toggle
@@ -374,3 +399,9 @@ footer
 
 	.jobContainer
 		height: inherit
+
+	.job-ellipses
+		display: none
+
+	#SkillsandProjects
+		height: auto
